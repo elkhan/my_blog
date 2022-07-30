@@ -1,0 +1,45 @@
+## Logarithms
+
+https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/v/logarithms?modal=1
+### Logs are the flip of exponentials
+
+_2<sup>4</sup> = 2 * 2 * 2 * 2 = 16_
+
+#### Logarithm is figuring out what power you have to raise to get another number.
+#### Logarithms are another way of thinking about exponents.
+
+For example, we know that 2 raised to the 4<sup>th</sup> power equals 16. This is expressed
+by the exponential equation 2<sup>4</sup> = 16.
+Now, suppose someone asked us, "2 raised to which power equals 16?" The answer would be 4.
+This is expressed by the logarithmic equation log<sub>2</sub>(16) = 4
+
+_2<sup>4</sup> = 16_ <u>is equal to</u> _log<sub>2</sub>(16) = 4_
+
+_log<sub>2</sub>(16) = x_ -> what power do I need to raise 2 to get 16
+
+Both equations describe the same relationship between the numbers 2, 4, and 16, where 2 is the base
+and 4 is the exponent.
+The difference is that while the exponential form isolates the power, 16, the logarithmic
+form isolates the exponent, 4.
+
+### Definition of a logarithm
+### _log<sub>b</sub>(a) = c == b<sup>c</sup> = a_
+* b is the base
+* c is the exponent
+* a is the argument
+
+#### Examples:
+
+* _log<sub>3</sub>(81) = x_ <u>is equal _to</u> 3<sup>x</sup> = 81_ --> x = 4
+
+  _log<sub>3</sub>(81) = 4_
+
+* _log<sub>6</sub>(216) = 3_ == _6<sup>3</sup> = 216_
+
+* _log<sub>2</sub>(64) = 6_ == _2<sup>6</sup> = 64_
+
+* _log<sub>100</sub>(1) = 0_
+
+* _log<sub>5</sub>(5) = 2_ == _5<sup>2</sup> = 25_
+
+^ In the context of [Big O](../../big_o/README.md), log always means log<sub>2</sub>
