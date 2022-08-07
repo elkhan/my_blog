@@ -1,0 +1,11 @@
+# Links
+
+1. [Codewars](https://www.codewars.com/)
+2. [Leetcode](https://leetcode.com/)
+3. [Hackerrank](https://www.hackerrank.com/)
+4. [w3resource-javascript-exercises](https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php)
+
+## Youtube
+
+- <https://www.youtube.com/channel/UCl3tJFKsFrw2p_Wxf1YDSow> - Programming Live with Larry
+- <https://www.youtube.com/playlist?list=PLBZBJbE_rGRVnpitdvpdY9952IsKMDuev> - CS Dojo

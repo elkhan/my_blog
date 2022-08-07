@@ -1,0 +1,25 @@
+# Links
+
+[JS Info](https://javascript.info/recursion)
+
+[MDN recursion](https://developer.mozilla.org/en-US/docs/Glossary/Recursion)
+
+[MDN more on functions and recursion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#recursion)
+
+[Kyle Simpson Functional Light JS - recursion](https://github.com/getify/Functional-Light-JS/blob/master/manuscript/ch8.md/#chapter-8-recursion)
+
+[Recursion in Functional JavaScript](https://www.sitepoint.com/recursion-functional-javascript/)
+
+[SO on trampoline](https://stackoverflow.com/a/27704484)
+
+[Using trampolines](https://blog.logrocket.com/using-trampolines-to-manage-large-recursive-loops-in-javascript-d8c9db095ae3/)
+
+[Dr. Axel Rauschmayer - Tail call optimization](https://2ality.com/2015/06/tail-call-optimization.html)
+
+## Videos
+
+[CS Dojo - youtube](https://www.youtube.com/watch?v=B0NtAFf4bvU)
+
+[Freecodecamp.org - youtube](https://www.youtube.com/watch?v=IJDJ0kBx2LM)
+
+[MIT OpenCourseWare](https://www.youtube.com/watch?v=WPSeyjX1-4s)

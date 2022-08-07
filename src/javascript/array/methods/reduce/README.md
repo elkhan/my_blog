@@ -1,0 +1,4 @@
+# Links
+
+1. [MDN - reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+2. [Reduce - egghead.io](https://egghead.io/lessons/javascript-transform-an-array-into-a-single-value-using-reduce)

@@ -17,15 +17,16 @@ def peasant(a, b):
 
 assert peasant(5, 4) == 20
 
-assert binary_repr(17) == '10001'
-assert binary_repr(17 >> 1) == '1000'  # 8 Halves the number. If odd it first subtracts one and then halves
-assert binary_repr(16 >> 1) == '1000'  # 8
-assert binary_repr(17 >> 2) == '100'  # 4
-assert binary_repr(17 >> 3) == '10'  # 2
+assert binary_repr(17) == "10001"
+# 8 Halves the number. If odd it first subtracts one and then halves
+assert binary_repr(17 >> 1) == "1000"
+assert binary_repr(16 >> 1) == "1000"  # 8
+assert binary_repr(17 >> 2) == "100"  # 4
+assert binary_repr(17 >> 3) == "10"  # 2
 
-assert binary_repr(2 << 1) == '100'  # 4
-assert binary_repr(2 << 2) == '1000'  # 8
-assert binary_repr(2 << 3) == '10000'  # 16
+assert binary_repr(2 << 1) == "100"  # 4
+assert binary_repr(2 << 2) == "1000"  # 8
+assert binary_repr(2 << 3) == "10000"  # 16
 
 assert (17).bit_length() == 5
 assert (4).bit_length() == 3

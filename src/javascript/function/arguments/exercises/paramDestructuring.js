@@ -1,0 +1,47 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires,import/no-extraneous-dependencies
+const { expect } = require('chai')
+
+const func = ({ name }) => `Hello ${name}`
+const person = {
+  name: 'Joe',
+}
+expect(func(person)).to.eq('Hello Joe')
+
+// https://javascript.info/destructuring-assignment
+const options = {
+  title: 'Menu',
+  height: 200,
+  width: 100,
+}
+const { title, ...rest } = options
+expect(title).to.eq('Menu')
+expect(rest).to.deep.eq({ height: 200, width: 100 })
+expect(rest.height).to.deep.eq(200)
+expect(rest.width).to.deep.eq(100)
+
+const selectEntries = ({ start, end, step }) => ({ start, end, step })
+
+expect(selectEntries({ end: 10, step: 2, start: 0 })).to.deep.eq({
+  start: 0,
+  end: 10,
+  step: 2,
+})
+
+expect(selectEntries({ start: 2 })).to.deep.eq({
+  start: 2,
+  end: undefined,
+  step: undefined,
+})
+
+const fnc = ({ name, ...props }) => ({
+    name,
+    props,
+  })
+
+expect(fnc({ name: 'Jake', age: 45, married: true })).to.deep.eq({
+  name: 'Jake',
+  props: { age: 45, married: true },
+})
+const x = fnc({ name: 'Jake', age: 45, married: true })
+
+expect(x.props.married).to.eq(true)

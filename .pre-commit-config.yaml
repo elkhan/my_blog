@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black --color -v
+        language: system
+        always_run: false
+        pass_filenames: true
+        exclude: '^.*(?<!\.py)$'
+      - id: pylint
+        name: pylint
+        entry: pylint --fail-under=-15 *.py
+        language: system
+        always_run: false
+        pass_filenames: true
+        exclude: '^.*(?<!\.py)$'
+      - id: unittest
+        name: Unit Tests
+        entry: python -m unittest discover
+        language: system
+        always_run: false
+        pass_filenames: false

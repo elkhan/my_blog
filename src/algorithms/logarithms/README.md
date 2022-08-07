@@ -1,12 +1,14 @@
-## Logarithms
+# Logarithms
 
-https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/v/logarithms?modal=1
-### Logs are the flip of exponentials
+<https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/v/logarithms?modal=1>
+
+## Logs are the flip of exponentials
 
 _2<sup>4</sup> = 2 * 2 * 2 * 2 = 16_
 
-#### Logarithm is figuring out what power you have to raise to get another number.
-#### Logarithms are another way of thinking about exponents.
+### Logarithm is figuring out what power you have to raise to get another number
+
+### Logarithms are another way of thinking about exponents
 
 For example, we know that 2 raised to the 4<sup>th</sup> power equals 16. This is expressed
 by the exponential equation 2<sup>4</sup> = 16.
@@ -23,12 +25,14 @@ The difference is that while the exponential form isolates the power, 16, the lo
 form isolates the exponent, 4.
 
 ### Definition of a logarithm
+
 ### _log<sub>b</sub>(a) = c == b<sup>c</sup> = a_
+
 * b is the base
 * c is the exponent
 * a is the argument
 
-#### Examples:
+#### Examples
 
 * _log<sub>3</sub>(81) = x_ <u>is equal _to</u> 3<sup>x</sup> = 81_ --> x = 4
 

@@ -1,6 +1,5 @@
-### Binary search
+# Binary search
 
+## Links
 
-### Links
-
-- https://realpython.com/binary-search-python/
+- <https://realpython.com/binary-search-python/>

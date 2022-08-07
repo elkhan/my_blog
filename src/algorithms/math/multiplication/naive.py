@@ -1,3 +1,8 @@
+"""
+Naive multiplication function
+"""
+
+
 def naive(a, b):
     x = a
     y = b
@@ -6,7 +11,3 @@ def naive(a, b):
         z = z + y
         x = x - 1
     return z
-
-
-assert naive(5, 3) == 15
-

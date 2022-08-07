@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="app">
+      <ul class="ranked-list">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+
+      <ul class="ranked-list">
+        <li>10</li>
+        <li>11</li>
+      </ul>
+    </main>
+    <script>
+      const lis = document
+        .getElementById('app')
+        .querySelectorAll('ul.ranked-list li')
+
+      for (let i = 0, l = lis.length; i < l; i += 1) {
+        console.log(lis[i].innerText)
+        console.log([i])
+        lis[i].innerHTML = (i + 1).toString()
+      }
+    </script>
+  </body>
+</html>
