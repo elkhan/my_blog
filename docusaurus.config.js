@@ -64,6 +64,12 @@ const config = {
             position: 'left',
             label: 'Algorithms',
           },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Intro',
+          },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/elkhan/my_blog',
