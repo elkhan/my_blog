@@ -1,4 +1,0 @@
-# Links
-
-1. [The Hard Parts of Object-Oriented JavaScript](https://frontendmasters.com/courses/object-oriented-js/)
-2. [JS Prototype](https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/)

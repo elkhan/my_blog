@@ -1,5 +1,0 @@
-# Links
-
-- [You-Don't-Know-JS](https://github.com/getify/You-Dont-Know-JS)
-- [You-Don't-Know-JS - 1-st Edition](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
-- [MDN - Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)

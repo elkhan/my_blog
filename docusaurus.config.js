@@ -54,21 +54,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'javascript',
+            docId: 'index',
             position: 'left',
-            label: 'JavaScript',
-          },
-          {
-            type: 'doc',
-            docId: 'algorithms',
-            position: 'left',
-            label: 'Algorithms',
-          },
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Intro',
+            label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
@@ -86,7 +74,7 @@ const config = {
             items: [
               {
                 label: 'Interview preparation',
-                to: '/docs/intro',
+                to: '/docs/index',
               },
             ],
           },
