@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.json",
+    "build": "docusaurus:build",
     "lint": "eslint '**/*.{js,ts,tsx}' --fix --quiet",
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
     "check:types": "tsc --noEmit",
