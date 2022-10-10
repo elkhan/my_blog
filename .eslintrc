@@ -11,9 +11,11 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "prettier"
+    "prettier",
+    "plugin:@docusaurus/all"
   ],
   "parser": "@typescript-eslint/parser",
+  "globals": { "JSX": true },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -21,7 +23,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "@docusaurus"],
   "rules": {
     "camelcase": "off",
     "@typescript-eslint/no-unused-vars": "warn",
@@ -31,7 +33,8 @@
     "spaced-comment": "warn",
     "no-extend-native": "off",
     "sort-imports": "warn",
-    "import/prefer-default-export" : "off",
+    "max-classes-per-file:": "off",
+    "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -42,18 +45,26 @@
         "tsx": "never"
       }
     ],
-    "no-restricted-syntax": [
-      "error",
-      "LabeledStatement",
-      "WithStatement"
-    ],
-    "no-alert": "off"
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "no-alert": "off",
+    "import/no-unresolved": [
+      "off",
+      {
+        "ignore": [
+          "^@theme",
+          "^@docusaurus",
+          "^@generated",
+          "^@site",
+          "^@testing-utils"
+        ]
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
       "node": {
         "paths": ["src"],
-        "extensions": [".js", ".ts", ".d.ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     },
     "react": {

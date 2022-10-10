@@ -1,27 +1,26 @@
 {
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     // "incremental": true,
     "target": "ESNEXT",
     "module": "commonjs",
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext"],
     "allowJs": true,
     "checkJs": true,
     // "jsx": "preserve",
-    // "declaration": true,
-    // "declarationMap": true,
+    "declaration": true,
+    "declarationMap": false,
     "sourceMap": false,
     // "outFile": "./",
-    "outDir": "dist",
-    "rootDir": "src",
+    "outDir": "build",
+    "rootDir": ".",
     // "composite": true,
     // "tsBuildInfoFile": "./",
     // "removeComments": true,
     // "noEmit": true,
-    // "importHelpers": true,
+    "importHelpers": true,
     // "downlevelIteration": true,
-    // "isolatedModules": true,
+    "isolatedModules": true,
 
     "strict": true,
     "noImplicitAny": true,
@@ -35,18 +34,15 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
-    "noPropertyAccessFromIndexSignature": true,
-    "moduleResolution": "node",
-    // "baseUrl": "./",
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
     // "paths": {},
     // "rootDirs": [],
     // "typeRoots": [],
-    "types": [
-      "jest",
-      "node"
-    ],
-    // "allowSyntheticDefaultImports": true,
+    "types": ["jest", "node"],
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     // "preserveSymlinks": true,
@@ -62,9 +58,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["./**/*"],
   "exclude": [
     "node_modules",
     "dist",
