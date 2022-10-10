@@ -38,6 +38,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        blog: { routeBasePath: '/' },
       }),
     ],
   ],
@@ -58,7 +59,6 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/elkhan/my_blog',
             label: 'GitHub',
@@ -70,33 +70,38 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
             items: [
               {
-                label: 'Interview preparation',
-                to: '/docs/index',
+                label: 'Algorithms',
+                to: '/docs/algorithms',
+              },
+              {
+                label: 'Data structures',
+                to: '/docs/data_structures',
+              },
+              {
+                label: 'JavaScript',
+                to: '/docs/javascript',
               },
             ],
           },
           {
-            title: 'Social',
             items: [
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/elkhanme',
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/elkhan',
+              },
+            ],
+          },
+          {
+            items: [
+              {
+                label: 'Blog',
+                to: '/',
               },
             ],
           },
