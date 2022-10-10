@@ -1,3 +1,20 @@
 # Object
 
 1. [MDN - Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+```js
+let user = { name: 'John' }
+let admin = user
+admin.name = 'Pete'
+```
+
+import { useEffect } from 'react'
+
+export const MyComponent = () => {
+  let user = { name: 'John' }
+  let admin = user
+  admin.name = 'Pete'
+  return <button onClick={() => alert(admin.name)}>Click</button>
+}
+
+<MyComponent />
