@@ -2,8 +2,8 @@
 // https://codehandbook.org/how-to-remove-duplicates-from-javascript-array/
 const array = ['🐰', 1, 2, '🐰', '🦐', '🦐', 3, 3]
 
-// Set
-const uniqueArrayFromSet = [...new Set(array)] // Set keeps only unique elements
+// set
+const uniqueArrayFromSet = [...new Set(array)] // set keeps only unique elements
 console.log(uniqueArrayFromSet) // [ '🐰', 1, 2, '🦐', 3 ]
 
 // Filter
