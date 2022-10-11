@@ -1,0 +1,51 @@
+---
+title: arrayUniqueNum
+description: Return a unique element from an array
+keywords:
+  - coding
+  - leetcode
+---
+
+```ts
+const arr = [4, 1, 2, 1, 2]
+
+function singleNumber(nums: number[]) {
+  return nums.find((x) => nums.indexOf(x) === nums.lastIndexOf(x))
+}
+```
+
+export const SingleNumber = () => {
+  const arr = [4, 1, 2, 1, 2]
+  function singleNumber(nums) {
+    return nums.find((x) => nums.indexOf(x) === nums.lastIndexOf(x))
+  }
+  return (
+    <button onClick={() => alert(singleNumber(arr))}>Check singleNumber result</button>
+  )
+}
+
+<SingleNumber />
+
+---
+
+```ts
+const arr = [4, 1, 2, 1, 2, 4, 5]
+
+function singleNumberXOR(nums: number[]) {
+  return nums.reduce((prev, curr) => prev ^ curr, 0)
+}
+```
+
+
+export const SingleNumberXOR = () => {
+  const arr = [4, 1, 2, 1, 2, 4, 5]
+  function singleNumberXOR(nums) {
+    return nums.reduce((prev, curr) => prev ^ curr, 0)
+  }
+  return (
+    <button onClick={() => alert(singleNumberXOR(arr))}>Check singleNumberXOR result</button>
+  )
+}
+
+<SingleNumberXOR />
+

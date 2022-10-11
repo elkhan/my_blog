@@ -21,3 +21,5 @@ const minutes = date.getMinutes()
 const seconds = date.getSeconds()
 console.log(`Today is : ${today}`)
 console.log(`Current time is : ${hours} PM : ${minutes} : ${seconds}`)
+
+export {}
