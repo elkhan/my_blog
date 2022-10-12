@@ -1,3 +1,105 @@
-# Concat
+---
+title: Concat
+description: Array.concat() method
+keywords:
+  - javaScript
+  - concat
+sidebar_position: 3
+---
 
-[MDN - concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+---
+#### Nested array
+```js
+const array1 = [1, 2, 3]
+const array2 = [1, 2, 3, [4, 5, [6]]]
+const array3 = array1.concat(array2)
+//outputs [1,2,3,1,2,3,[4,5,[6]]]
+```
+
+export const Concat = () => {
+  const array1 = [1, 2, 3]
+  const array2 = [1, 2, 3, [4, 5, [6]]]
+  const array3 = array1.concat(array2)
+  return <button onClick={() => alert(JSON.stringify(array3))}>Click me</button>
+}
+
+<Concat />
+
+---
+#### Concatenate values to an array
+```js
+const letters = ["a", "b", "c"];
+const alphaNumeric = letters.concat(1, [2, 3])
+//outputs ["a","b","c",1,2,3]
+```
+
+export const Value = () => {
+  const letters = ["a", "b", "c"]
+  const numbers = [1, [2, 3]]
+  const alphaNumeric = letters.concat(1, [2, 3])
+  return <button onClick={() => alert(JSON.stringify(alphaNumeric))}>Click me</button>
+}
+
+<Value />
+
+---
+
+#### Nested heterogeneous arrays
+```js
+const letters = ["a", "b", "c"]
+const numbers = [1, [2, 3]]
+const alphaNumeric = letters.concat(numbers)
+//outputs ["a","b","c",1,[2,3]]
+```
+
+export const AddValue = () => {
+  const letters = ["a", "b", "c"]
+  const numbers = [1, [2, 3]]
+  const alphaNumeric = letters.concat(numbers)
+  return <button onClick={() => alert(JSON.stringify(alphaNumeric))}>Click me</button>
+}
+
+<AddValue />
+
+---
+#### Sparse array
+```js
+[1, ,3].concat([4, 5])
+//outputs [ 1, empty, 3, 4, 5 ]
+```
+
+export const Sparse = () => {
+  return <button onClick={() => alert(JSON.stringify([1, , 3].concat([4, 5])))}>Click me</button>
+}
+
+<Sparse />
+
+---
+
+#### Concatenate array-like objects
+```js
+Array.prototype.concat.call([], 1, 2, 3)
+//outputs [1,2,3]
+```
+export const ArrayLike1 = () => {
+  return <button onClick={() => alert(JSON.stringify(Array.prototype.concat.call([], 1, 2, 3)))}>Click me</button>
+}
+
+<ArrayLike1 />
+
+>
+
+```js
+Array.prototype.concat.call({}, 1, 2, 3)
+//outputs [{},1,2,3]
+```
+export const ArrayLike2 = () => {
+  return <button onClick={() => alert(JSON.stringify(Array.prototype.concat.call({}, 1, 2, 3)))}>Click me</button>
+}
+
+<ArrayLike2 />
+
+---
+### Resources
+* [MDN - concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+
