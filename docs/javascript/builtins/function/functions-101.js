@@ -3,21 +3,21 @@
 const addEmployee = (name, age, position) => ({
   name,
   age,
-  position,
+  position
 })
 
 const office = {
   developer: {
-    ...addEmployee('John', 45, 'developer'),
+    ...addEmployee('John', 45, 'developer')
   },
   manager: {
-    ...addEmployee('Jane', 30, 'manager'),
-  },
+    ...addEmployee('Jane', 30, 'manager')
+  }
 }
 
 expect(office).to.deep.equal({
   developer: { name: 'John', age: 45, position: 'developer' },
-  manager: { name: 'Jane', age: 30, position: 'manager' },
+  manager: { name: 'Jane', age: 30, position: 'manager' }
 })
 
 /*
@@ -33,7 +33,9 @@ export const messages = [
   'They can be inserted into arrays',
   (message) => message,
   'like variables',
-  (message) => message,
+  (message) => message
 ]
 expect(messages[1](messages[0])).to.eq('They can be inserted into arrays')
 expect(messages[3](messages[2])).to.eq('like variables')
+
+module.exports = {}

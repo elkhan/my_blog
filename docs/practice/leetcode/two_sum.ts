@@ -37,7 +37,7 @@ export const twoSumMap = (nums: number[], target: number) => {
 /*
 Hash
  */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//
 // @ts-ignore
 // eslint-disable-next-line consistent-return
 export const twoSumHash = (nums: number[], target: number) => {

@@ -54,7 +54,7 @@
 
  */
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//
 // @ts-nocheck
 // FIXME
 function BinarySearchTree(value) {
@@ -73,21 +73,22 @@ BinarySearchTree.prototype.contains = function contains(value) {
 }
 // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_inOrder = function traverseDepthFirst_inOrder(fn) {
-  // implement me...
-}
+BinarySearchTree.prototype.traverseDepthFirst_inOrder =
+  function traverseDepthFirst_inOrder(fn) {
+    // implement me...
+  }
 // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_preOrder = function traverseDepthFirst_preOrder(fn) {
-  // implement me...
-}
+BinarySearchTree.prototype.traverseDepthFirst_preOrder =
+  function traverseDepthFirst_preOrder(fn) {
+    // implement me...
+  }
 // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_postOrder = function traverseDepthFirst_postOrder(
-  fn
-) {
-  // implement me...
-}
+BinarySearchTree.prototype.traverseDepthFirst_postOrder =
+  function traverseDepthFirst_postOrder(fn) {
+    // implement me...
+  }
 // Time complexity:
 
 BinarySearchTree.prototype.checkIfFull = function checkIfFull() {

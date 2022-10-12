@@ -1,0 +1,43 @@
+---
+title: hasOwnProperty()
+description: Object.hasOwnProperty()
+keywords:
+  - javascript
+  - object
+  - prototype
+tags: [object, property, hasOwnProperty]
+sidebar_position: 7
+---
+
+```js
+const person = {
+  name: 'Jane'
+}
+
+console.log(Object.getPrototypeOf(person) === Object.prototype) // true
+// eslint-disable-next-line no-proto
+console.log(person.__proto__ === Object.prototype) // true
+```
+
+```js
+function Person(name, age) {
+  this.name = name
+  this.age = age
+}
+
+const person = new Person('Jim', 50)
+console.log('person.__proto__', person.__proto__)
+const anotherPerson = {
+  __proto__: person,
+}
+console.log(anotherPerson.name) // Jim
+console.log(anotherPerson.__proto__.__proto__) // Person
+// eslint-disable-next-line no-prototype-builtins
+console.log(anotherPerson.hasOwnProperty('name')) // false
+console.log(Object.hasOwnProperty.call(anotherPerson, 'name')) // false
+```
+
+## Useful links
+
+- [MDN - Object.hasOwnProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+

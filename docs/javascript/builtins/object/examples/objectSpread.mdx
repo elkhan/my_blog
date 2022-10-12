@@ -1,0 +1,53 @@
+---
+title: Object spread
+description: Object spread
+keywords:
+  - javascript
+  - object
+  - property
+tags: [object, property, spread]
+sidebar_position: 4
+---
+
+```js
+const objA = {
+  name: 'Jane',
+  age: 32
+}
+const objB = {
+  surname: 'Doe',
+  age: 30,
+  job: 'Google'
+}
+const objC = { ...objA, ...objB }
+console.log(objC)
+
+const { age, ...personWithoutAge } = objC
+console.log(personWithoutAge)
+```
+
+---
+
+```js
+const person1 = {
+  name: 'Jake',
+  age: 32
+}
+const person2 = {
+  name: 'Jane',
+  age: 30
+}
+
+const person3 = { ...person1 }
+console.log(person3) // { name: 'Jake', age: 32 }
+
+const person4 = { ...person1, ...person2 }
+console.log(person4) // { name: 'Jane', age: 30 }
+const person5 = { ...person1, ...person2 }
+console.log(person5) // { name: 'Jane', age: 30 }
+```
+
+## Useful links
+
+- [MDN - Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+- [2ality - Spread vs Object.assign()](<https://2ality.com/2016/10/rest-spread-properties.html#spreading-objects-versus-object.assign()>)

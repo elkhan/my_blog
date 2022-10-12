@@ -11,18 +11,18 @@ export const updateRecords = (
   if (prop !== 'tracks' && value !== '') {
     // eslint-disable-next-line no-param-reassign
     object[id][prop] = value
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //
     //  @ts-ignore
   } else if (prop === 'tracks' && object[id].tracks === undefined) {
     // eslint-disable-next-line no-param-reassign,@typescript-eslint/ban-ts-comment
     // @ts-ignore
     // eslint-disable-next-line no-param-reassign
     object[id].tracks = []
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //
     // @ts-ignore
     object[id].tracks.push(value)
   } else if (prop === 'tracks' && value !== '') {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //
     // @ts-ignore
     object[id].tracks.push(value)
   } else if (value === '') {

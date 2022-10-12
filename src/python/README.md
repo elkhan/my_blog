@@ -1,4 +1,4 @@
-# Links
+## Useful links
 
 1. [Complete Python 3 Bootcamp](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
 2. [Jupyter Notebooks Introduction](https://realpython.com/jupyter-notebook-introduction/)

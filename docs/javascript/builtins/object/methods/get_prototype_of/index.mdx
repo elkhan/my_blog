@@ -1,0 +1,25 @@
+---
+title: getPrototypeOf()
+description: Object.getPrototypeOf()
+keywords:
+  - javascript
+  - object
+  - prototype
+tags: [object, property, getPrototypeOf]
+sidebar_position: 4
+---
+
+```js
+const person = {
+  name: 'Jane',
+}
+
+console.log(Object.getPrototypeOf(person) === Object.prototype) // true
+// eslint-disable-next-line no-proto
+console.log(person.__proto__ === Object.prototype) // true
+
+```
+
+## Useful links
+
+- [MDN - Object.getPrototypeOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)

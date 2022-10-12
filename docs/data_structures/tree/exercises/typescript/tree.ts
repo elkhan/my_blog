@@ -42,7 +42,7 @@
 
  */
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//
 // @ts-nocheck
 // FIXME
 function Tree(value) {

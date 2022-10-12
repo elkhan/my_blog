@@ -57,3 +57,5 @@ const autoManufacturer = (type, model) => {
 const cx5 = autoManufacturer('suv', 'cx5')
 
 console.log(cx5) // SUV {doors: 4, engine: "V6", color: "grey"}
+
+module.exports = {}

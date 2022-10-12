@@ -89,7 +89,7 @@
 
  */
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//
 // @ts-nocheck
 // FIXME
 function Graph() {
@@ -132,12 +132,20 @@ Graph.prototype.forEach = function forEach(fn) {
 }
 // Time complexity:
 
-Graph.prototype.traverseDepthFirst = function traverseDepthFirst(value, fn, visited, distance) {
+Graph.prototype.traverseDepthFirst = function traverseDepthFirst(
+  value,
+  fn,
+  visited,
+  distance
+) {
   // implement me...
 }
 // Time complexity:
 
-Graph.prototype.traverseBreadthFirst = function traverseBreadthFirst(value, fn) {
+Graph.prototype.traverseBreadthFirst = function traverseBreadthFirst(
+  value,
+  fn
+) {
   // implement me...
 }
 // Time complexity:
