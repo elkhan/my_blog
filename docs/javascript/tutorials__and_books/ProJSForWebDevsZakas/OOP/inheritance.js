@@ -3,7 +3,7 @@ function SuperType() {
   this.property = true
 }
 
-SuperType.prototype.getSuperValue = function() {
+SuperType.prototype.getSuperValue = function () {
   return this.property
 }
 
@@ -14,11 +14,11 @@ function SubType() {
 // inherit from SuperType
 SubType.prototype = new SuperType()
 
-SubType.prototype.getSubValue = function() {
+SubType.prototype.getSubValue = function () {
   return this.subproperty
 }
 
-var instance = new SubType()
+let instance = new SubType()
 // console.log(instance.getSuperValue()); // true
 
 // Nicholas C. Zakas. “Professional: JavaScript® for Web Developers.” iBooks. page 244, figure 6-4
@@ -39,7 +39,7 @@ const instance1 = new SubType()
 console.log(instance1.getSuperValue()) // true
 
 // override existing method
-SubType.prototype.getSuperValue = function() {
+SubType.prototype.getSuperValue = function () {
   return false
 }
 const instance2 = new SubType()
@@ -116,7 +116,7 @@ function YetAnotherSuperType(name) {
   this.colors = ['red', 'blue', 'green']
 }
 
-YetAnotherSuperType.prototype.sayName = function() {
+YetAnotherSuperType.prototype.sayName = function () {
   console.log(this.name)
 }
 
@@ -129,7 +129,7 @@ function YetAnotherSubType(name, age) {
 // inherit methods
 YetAnotherSubType.prototype = new YetAnotherSuperType()
 
-YetAnotherSubType.prototype.sayAge = function() {
+YetAnotherSubType.prototype.sayAge = function () {
   console.log(this.age)
 }
 
@@ -156,7 +156,7 @@ function object(o) {
 
 const person = {
   name: 'Nicholas',
-  friends: ['Shelby', 'Court', 'Van'],
+  friends: ['Shelby', 'Court', 'Van']
 }
 
 const anotherPerson = object(person)
@@ -174,7 +174,7 @@ console.log(person.friends) // [ 'Shelby', 'Court', 'Van', 'Rob', 'Barbie' ]
 
 const person1 = {
   name: 'Nicholas',
-  friends: ['Shelby', 'Court', 'Van'],
+  friends: ['Shelby', 'Court', 'Van']
 }
 
 const anotherPerson1 = Object.create(person1)
@@ -191,13 +191,13 @@ console.log(person1.friends)
 
 const person2 = {
   name: 'Nicholas',
-  friends: ['Shelby', 'Court', 'Van'],
+  friends: ['Shelby', 'Court', 'Van']
 }
 
 const anotherPerson2 = Object.create(person2, {
   name: {
-    value: 'Greg',
-  },
+    value: 'Greg'
+  }
 })
 
 console.log(anotherPerson2.name) // "Greg"
@@ -208,7 +208,7 @@ console.log(person2.name) // "Nicholas"
 
 function createAnother(original) {
   const clone = object(original) // create a new object by calling a function
-  clone.sayHi = function() {
+  clone.sayHi = function () {
     // augment the object in some way
     console.log('hi')
   }
@@ -217,7 +217,7 @@ function createAnother(original) {
 
 const person3 = {
   name: 'Nicholas',
-  friends: ['Shelby', 'Court', 'Van'],
+  friends: ['Shelby', 'Court', 'Van']
 }
 
 const anotherPerson3 = createAnother(person3)
@@ -232,7 +232,7 @@ function SuperType(name) {
   this.colors = ['red', 'blue', 'green']
 }
 
-SuperType.prototype.sayName = function() {
+SuperType.prototype.sayName = function () {
   console.log(this.name)
 }
 
@@ -244,7 +244,7 @@ function SubType(name, age) {
 
 SubType.prototype = new SuperType() // first call to SuperType()
 SubType.prototype.constructor = SubType
-SubType.prototype.sayAge = function() {
+SubType.prototype.sayAge = function () {
   console.log(this.age)
 } // Nicholas C. Zakas. “Professional: JavaScript® for Web Developers.” page 256, figure 6-6
 
@@ -261,7 +261,7 @@ function SuperType(name) {
   this.colors = ['red', 'blue', 'green']
 }
 
-SuperType.prototype.sayName = function() {
+SuperType.prototype.sayName = function () {
   alert(this.name)
 }
 
@@ -273,7 +273,7 @@ function SubType(name, age) {
 
 inheritPrototype(SubType, SuperType)
 
-SubType.prototype.sayAge = function() {
+SubType.prototype.sayAge = function () {
   alert(this.age)
 }
 // This example is more efficient in that the SuperType constructor is being called only one time, avoiding having unnecessary and unused properties on SubType.prototype. Furthermore, the prototype chain is kept intact, so both instanceof and isPrototypeOf() behave as they would normally. Parasitic combination inheritance is considered the most optimal inheritance paradigm for reference types.
@@ -307,3 +307,5 @@ SubType.prototype.sayAge = function() {
 // This pattern has also been repurposed for use with combination inheritance to remove the inefficiencies related to the number of times the supertype constructor is called.
 
 // Parasitic combination inheritance is considered the most efficient way to implement type-based inheritance.
+
+module.exports = {}

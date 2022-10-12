@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return */
+/* eslint-disable consistent-return,max-classes-per-file */
 /* eslint-disable class-methods-use-this */
 class Car {
   constructor(doors, engine, color) {
@@ -23,7 +23,7 @@ class CarFactory {
 const carMixin = {
   revEngine() {
     console.log(`The ${this.engine} is doing Vroom Vroom!`)
-  },
+  }
 }
 
 const carFactory = new CarFactory()

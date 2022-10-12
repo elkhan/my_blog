@@ -169,3 +169,4 @@ LinkedList.prototype.removeBefore = function removeBefore(node) {
  1 1 5 6   (1 -> 1 -> 5 -> 6)
 
  */
+export {}

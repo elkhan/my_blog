@@ -12,7 +12,7 @@ const Cat = function (name, sound) {
     const t = setInterval(
       () => {
         expect(this.makeSound()).to.eq('Fluffy says: Purr')
-        count++
+        count += 1
         if (count === max) {
           clearTimeout(t)
         }

@@ -12,7 +12,7 @@ function findUniqueBrute(array) {
   const n = array.length
 
   for (let i = 0; i < n; i += 1) {
-    for (let j = i; j < n; j++) {
+    for (let j = i; j < n; j += 1) {
       if (array[i] !== array[j]) {
         result = array[i]
       }

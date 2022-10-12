@@ -9,12 +9,12 @@
 // }();
 
 // eslint-disable-next-line no-unused-vars
-const testModule = (function() {
+const testModule = (function () {
   let counter = 0
   return {
     incrementCounter() {
       // eslint-disable-next-line no-plusplus
-      return counter++
+      return (counter += 1)
     },
     resetCounter() {
       console.log(`counter value prior to reset: ${counter}`)
@@ -22,7 +22,7 @@ const testModule = (function() {
     },
     counterValue() {
       console.log(`counter value: ${counter}`)
-    },
+    }
   }
 })()
 
@@ -32,11 +32,11 @@ const testModule = (function() {
 // testModule.resetCounter(); // counter value prior to reset: 2
 // testModule.counterValue(); // counter value: 0
 
-const nameSpace = (function() {
+const nameSpace = (function () {
   let myPrivateVar = 0
   let myPrivateMethod
 
-  myPrivateMethod = function(foo) {
+  myPrivateMethod = function (foo) {
     console.log(foo)
   }
 
@@ -45,10 +45,10 @@ const nameSpace = (function() {
 
     myPublicFunction(bar) {
       // Increment private counter
-      myPrivateVar++
+      myPrivateVar += 1
       // Call private method using bar
       myPrivateMethod(bar)
-    },
+    }
   }
 })()
 
@@ -59,7 +59,7 @@ nameSpace.myPublicFunction('hello') // hello
 /**
  *
  */
-const basketModule = (function() {
+const basketModule = (function () {
   const basket = []
   function doSomethingPrivate() {
     console.log('Calling from a private function')
@@ -87,22 +87,22 @@ const basketModule = (function() {
     getTotal() {
       let q = this.getItemCount()
       let p = 0
-      while (q--) {
+      while ((q -= 1)) {
         p += basket[q].price
       }
       return p
-    },
+    }
   }
 })()
 
 basketModule.addItem({
   item: 'bread',
-  price: 0.5,
+  price: 0.5
 })
 
 basketModule.addItem({
   item: 'butter',
-  price: 0.3,
+  price: 0.3
 })
 
 console.log(basketModule.getItemCount()) // 2

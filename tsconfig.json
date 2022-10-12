@@ -6,7 +6,7 @@
     "module": "commonjs",
     "lib": ["ESNext"],
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     // "jsx": "preserve",
     "declaration": true,
     "declarationMap": false,

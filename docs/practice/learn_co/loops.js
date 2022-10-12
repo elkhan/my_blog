@@ -77,7 +77,10 @@ function firstNotEqual(arr1, value) {
   return 'All equal'
 }
 
-console.log('firstNotEqual: 1', firstNotEqual(['dog', 'dog', 'dog', 'cat', 'mouse'], 'dog')) // cat
+console.log(
+  'firstNotEqual: 1',
+  firstNotEqual(['dog', 'dog', 'dog', 'cat', 'mouse'], 'dog')
+) // cat
 console.log('firstNotEqual: 2', firstNotEqual([1, 1, 1, 1, 1, 1], 1)) // All equal
 
 // Continue
@@ -94,6 +97,6 @@ for (let i = 0, l = scores.length; i < l; i += 1) {
   }
 
   // eslint-disable-next-line no-plusplus
-  scores[i]++
+  scores[i] += 1
 }
 console.log(scores) // [4, 5, 10, 6, 11, 7]

@@ -2,8 +2,8 @@ function foo() {
   let count = 0
   /* eslint func-names: 0 */
   /* eslint no-plusplus: 0 */
-  return function() {
-    return count++
+  return function () {
+    return (count += 1)
   }
 }
 
@@ -14,7 +14,7 @@ console.log(x()) // 1
 console.log(x()) // 2
 
 function sumX(z) {
-  return function(y) {
+  return function (y) {
     return z + y
   }
 }

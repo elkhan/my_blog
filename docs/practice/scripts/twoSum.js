@@ -3,7 +3,7 @@
 /* eslint-disable no-plusplus */
 const twoSum = (nums, total) => {
   for (let i = 0; i < nums.length - 1; i += 1) {
-    for (let j = i + 1; j < nums.length; j++) {
+    for (let j = i + 1; j < nums.length; j += 1) {
       if (nums[i] + nums[j] === total) {
         return [nums[i], nums[j]]
       }
@@ -21,10 +21,13 @@ const twoSumCalc = (nums, total) => {
   let iterations = 0
   const startTime = new Date()
   for (let i = 0; i < nums.length - 1; i += 1) {
-    for (let j = i + 1; j < nums.length; j++) {
-      iterations++
+    for (let j = i + 1; j < nums.length; j += 1) {
+      iterations += 1
       if (nums[i] + nums[j] === total) {
-        console.log(`Iterations: ${iterations}`, `Time: ${new Date() - startTime}ms`)
+        console.log(
+          `Iterations: ${iterations}`,
+          `Time: ${new Date() - startTime}ms`
+        )
         return [nums[i], nums[j]]
       }
     }
@@ -49,11 +52,14 @@ const twoSumHashTable = (nums, totalVal) => {
   for (let i = 0; i < nums.length; i += 1) {
     // What previous value needs to exist for
     // us to have found our solution?
-    iterations++
+    iterations += 1
     const complement = totalVal - nums[i]
 
     if (previousValues[complement]) {
-      console.log(`Iterations: ${iterations}`, `Time: ${new Date() - startTime}ms`)
+      console.log(
+        `Iterations: ${iterations}`,
+        `Time: ${new Date() - startTime}ms`
+      )
       return [complement, nums[i]]
     }
 

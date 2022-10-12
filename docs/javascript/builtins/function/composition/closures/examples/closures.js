@@ -27,7 +27,7 @@ function sayCount() {
     console.log(num)
   }
   // eslint-disable-next-line no-plusplus
-  num++
+  num += 1
   return say
 }
 
@@ -36,10 +36,10 @@ sayNumber()
 
 const closure = (() => {
   let counter = 0
-  return () => 
+  // eslint-disable-next-line no-return-assign
+  return () =>
     // eslint-disable-next-line no-return-assign
-     (counter += 1)
-  
+    (counter += 1)
 })()
 console.log(closure())
 console.log(closure())
@@ -67,15 +67,15 @@ expect(user('Some other movie')).to.eq(
 More examples
  */
 
-const point = (x, y) => 
+const point =
+  (x, y) =>
   // eslint-disable-next-line no-return-assign
-   (dx, dy) => ({
+  (dx, dy) => ({
     // eslint-disable-next-line no-param-reassign
     x: (x += dx),
     // eslint-disable-next-line no-param-reassign
-    y: (y += dy),
+    y: (y += dy)
   })
-
 
 const pt = point(15, 5)
 

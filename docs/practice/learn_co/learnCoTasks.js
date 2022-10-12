@@ -106,7 +106,7 @@ function viewCart() {
     return console.log('Your shopping cart is empty.')
   }
   // eslint-disable-next-line no-plusplus
-  for (let item = 0; item < cart.length; item++) {
+  for (let item = 0; item < cart.length; item += 1) {
     // eslint-disable-next-line guard-for-in,no-restricted-syntax
     for (const i in cart[item]) {
       newArray.push(`${i} at $${cart[item][i]}`)
@@ -141,9 +141,13 @@ function removeFromCart(item) {
 // The function should empty the cart array.
 function placeOrder(cardNumber) {
   if (!cardNumber) {
-    console.log("We don't have a credit card on file for you to place your order.")
+    console.log(
+      "We don't have a credit card on file for you to place your order."
+    )
   } else {
-    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+    console.log(
+      `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`
+    )
   }
   cart = []
 }

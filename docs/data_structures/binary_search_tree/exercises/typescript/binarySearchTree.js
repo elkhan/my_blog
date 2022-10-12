@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
 BINARY SEARCH TREES
 
@@ -57,37 +58,37 @@ function BinarySearchTree(value) {
   this.right = null
 }
 
-BinarySearchTree.prototype.insert = function(value) {
+BinarySearchTree.prototype.insert = function (value) {
   // implement me...
 }
 // Time complexity:
 
-BinarySearchTree.prototype.contains = function(value) {
+BinarySearchTree.prototype.contains = function (value) {
   // implement me...
 }
 // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
+BinarySearchTree.prototype.traverseDepthFirst_inOrder = function (fn) {
   // implement me...
 }
 // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(fn) {
+BinarySearchTree.prototype.traverseDepthFirst_preOrder = function (fn) {
   // implement me...
 }
 // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(fn) {
+BinarySearchTree.prototype.traverseDepthFirst_postOrder = function (fn) {
   // implement me...
 }
 // Time complexity:
 
-BinarySearchTree.prototype.checkIfFull = function() {
+BinarySearchTree.prototype.checkIfFull = function () {
   // implement me...
 }
 // Time complexity:
 
-BinarySearchTree.prototype.checkIfBalanced = function() {
+BinarySearchTree.prototype.checkIfBalanced = function () {
   // implement me...
 }
 // Time complexity:

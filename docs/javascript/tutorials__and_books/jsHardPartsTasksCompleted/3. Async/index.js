@@ -56,7 +56,7 @@ function brokenRecord() {
     if (!done) console.log('hi again')
   }, 1000)
 
-  window.addEventListener('keypress', e => {
+  window.addEventListener('keypress', (e) => {
     if (e.keyCode === 13) {
       done = true
     }
@@ -76,7 +76,7 @@ function limitedRepeat() {
   let counter = 0
   const printEverySecond = setInterval(() => {
     console.log('hi for now')
-    counter++
+    counter += 1
     if (counter > 4) {
       clearInterval(printEverySecond)
     }
@@ -105,7 +105,7 @@ function everyXsecsForYsecs(callback, interval, duration) {
     if (counter < duration) {
       callback()
     }
-    counter++
+    counter += 1
   }, interval * 1000)
 }
 // Uncomment the following lines to check your work!

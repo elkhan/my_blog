@@ -1,10 +1,10 @@
-const testModule = (function() {
+const testModule = (function () {
   let counter = 0
 
   return {
     incrementCounter() {
-      // eslint-disable-next-line no-plusplus
-      return counter++
+      // eslint-disable-next-line no-plusplus,no-return-assign
+      return (counter += 1)
     },
     resetCounter() {
       console.log(`counter value prior to reset: ${counter}`)
@@ -12,7 +12,7 @@ const testModule = (function() {
     },
     getCounterValue() {
       console.log(counter)
-    },
+    }
   }
 })()
 

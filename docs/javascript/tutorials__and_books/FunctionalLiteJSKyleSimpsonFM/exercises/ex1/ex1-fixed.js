@@ -8,7 +8,7 @@ function bar(x, y) {
 
   // eslint-disable-next-line no-shadow
   function foo(x) {
-    y++
+    y += 1
     z = x * y
   }
 }

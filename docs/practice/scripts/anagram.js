@@ -1,11 +1,8 @@
 // https://blog.anthonycomito.com/answer-the-anagram-interview-question-with-es6-c7621e43596d
 /* eslint-disable no-restricted-syntax */
 function isAnagram(stringA, stringB) {
-  const sortStr = str => {
-    const newStr = str
-      .split('')
-      .sort()
-      .join('')
+  const sortStr = (str) => {
+    const newStr = str.split('').sort().join('')
     return newStr
   }
 
@@ -28,7 +25,7 @@ function isAnagram2(stringA, stringB) {
     for (const char of text) {
       // eslint-disable-next-line no-prototype-builtins
       if (charMap.hasOwnProperty(char)) {
-        charMap[char]++
+        charMap[char] += 1
       } else {
         charMap[char] = 1
       }

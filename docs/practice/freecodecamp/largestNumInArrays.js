@@ -8,7 +8,7 @@ function largestOfFour(arr) {
   let largeNumber = 0
   const arrayWithLargeNumber = []
   for (let i = 0; i < arr.length; i += 1) {
-    for (let j = 0; j < arr[i].length; j++) {
+    for (let j = 0; j < arr[i].length; j += 1) {
       if (arr[i][j] > largeNumber) {
         largeNumber = arr[i][j]
       }
@@ -23,7 +23,7 @@ expect(
     [13, 27, 18, 26],
     [4, 5, 1, 3],
     [32, 35, 37, 39],
-    [1000, 1001, 857, 1],
+    [1000, 1001, 857, 1]
   ])
 ).to.deep.equal([27, 5, 39, 1001]) // [ 27, 5, 39, 1001 ]
 expect(
@@ -31,7 +31,7 @@ expect(
     [4, 9, 1, 3],
     [13, 35, 18, 26],
     [32, 35, 97, 39],
-    [1000000, 1001, 857, 1],
+    [1000000, 1001, 857, 1]
   ])
 ).to.deep.equal([9, 35, 97, 1000000]) // [ 9, 35, 97, 1000000 ]
 
@@ -41,9 +41,9 @@ expect(
 
 function largestOfFour2(arr) {
   const results = []
-  for (let n = 0; n < arr.length; n++) {
+  for (let n = 0; n < arr.length; n += 1) {
     let largestNumber = arr[n][0]
-    for (let sb = 1; sb < arr[n].length; sb++) {
+    for (let sb = 1; sb < arr[n].length; sb += 1) {
       if (arr[n][sb] > largestNumber) {
         largestNumber = arr[n][sb]
       }
@@ -57,7 +57,7 @@ expect(
     [13, 27, 18, 26],
     [4, 5, 1, 3],
     [32, 35, 37, 39],
-    [1000, 1001, 857, 1],
+    [1000, 1001, 857, 1]
   ])
 ).to.deep.equal([27, 5, 39, 1001]) // [ 27, 5, 39, 1001 ]
 expect(
@@ -65,7 +65,7 @@ expect(
     [4, 9, 1, 3],
     [13, 35, 18, 26],
     [32, 35, 97, 39],
-    [1000000, 1001, 857, 1],
+    [1000000, 1001, 857, 1]
   ])
 ).to.deep.equal([9, 35, 97, 1000000]) // [ 9, 35, 97, 1000000 ]
 
@@ -74,14 +74,16 @@ expect(
  */
 
 function largestOfFour3(arr) {
-  return arr.map((group) => group.reduce((prev, current) => (current > prev ? current : prev)))
+  return arr.map((group) =>
+    group.reduce((prev, current) => (current > prev ? current : prev))
+  )
 }
 expect(
   largestOfFour3([
     [13, 27, 18, 26],
     [4, 5, 1, 3],
     [32, 35, 37, 39],
-    [1000, 1001, 857, 1],
+    [1000, 1001, 857, 1]
   ])
 ).to.deep.equal([27, 5, 39, 1001]) // [ 27, 5, 39, 1001 ]
 expect(
@@ -89,7 +91,7 @@ expect(
     [4, 9, 1, 3],
     [13, 35, 18, 26],
     [32, 35, 97, 39],
-    [1000000, 1001, 857, 1],
+    [1000000, 1001, 857, 1]
   ])
 ).to.deep.equal([9, 35, 97, 1000000]) // [ 9, 35, 97, 1000000 ]
 
@@ -105,7 +107,7 @@ expect(
     [13, 27, 18, 26],
     [4, 5, 1, 3],
     [32, 35, 37, 39],
-    [1000, 1001, 857, 1],
+    [1000, 1001, 857, 1]
   ])
 ).to.deep.equal([27, 5, 39, 1001]) // [ 27, 5, 39, 1001 ]
 expect(
@@ -113,7 +115,7 @@ expect(
     [4, 9, 1, 3],
     [13, 35, 18, 26],
     [32, 35, 97, 39],
-    [1000000, 1001, 857, 1],
+    [1000000, 1001, 857, 1]
   ])
 ).to.deep.equal([9, 35, 97, 1000000]) // [ 9, 35, 97, 1000000 ]
 /*
@@ -151,14 +153,16 @@ Thus, our Function.prototype.apply.bind(Math.max, null) makes a new function acc
  */
 
 function largestOfFour5(arr, finalArr = []) {
-  return !arr.length ? finalArr : largestOfFour5(arr.slice(1), finalArr.concat(Math.max(...arr[0])))
+  return !arr.length
+    ? finalArr
+    : largestOfFour5(arr.slice(1), finalArr.concat(Math.max(...arr[0])))
 }
 expect(
   largestOfFour5([
     [13, 27, 18, 26],
     [4, 5, 1, 3],
     [32, 35, 37, 39],
-    [1000, 1001, 857, 1],
+    [1000, 1001, 857, 1]
   ])
 ).to.deep.equal([27, 5, 39, 1001]) // [ 27, 5, 39, 1001 ]
 expect(
@@ -166,6 +170,6 @@ expect(
     [4, 9, 1, 3],
     [13, 35, 18, 26],
     [32, 35, 97, 39],
-    [1000000, 1001, 857, 1],
+    [1000000, 1001, 857, 1]
   ])
 ).to.deep.equal([9, 35, 97, 1000000]) // [ 9, 35, 97, 1000000 ]

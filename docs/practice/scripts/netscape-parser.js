@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsdom = require('jsdom/lib/old-api.js')
 
@@ -101,7 +103,7 @@ exports.parse = function parse(html, callback) {
                 menuRoot = {
                   title: 'Menu',
                   children: [],
-                  ns_root: 'menu',
+                  ns_root: 'menu'
                 }
               }
               if (itemData.type == 'folder' && itemData.__dir_dl) {

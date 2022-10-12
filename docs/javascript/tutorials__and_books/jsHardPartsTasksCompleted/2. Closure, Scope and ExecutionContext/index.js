@@ -48,7 +48,7 @@ function createFunctionPrinter(input) {
 function outer() {
   let counter = 0 // this variable is outside incrementCounter's scope
   function incrementCounter() {
-    counter++
+    counter += 1
     console.log('counter', counter)
   }
   return incrementCounter
@@ -111,7 +111,7 @@ function once(func) {
   let counter = 0
   let result
   function callCallback(num) {
-    counter++
+    counter += 1
     return counter < 2 ? (result = func(num)) : result
   }
   return callCallback
@@ -134,7 +134,7 @@ const onceFunc = once(addByTwo)
 function after(count, func) {
   let counter = 0
   function executeCallback() {
-    counter++
+    counter += 1
     if (counter >= count) {
       return func()
     }
@@ -142,7 +142,7 @@ function after(count, func) {
   return executeCallback
 }
 
-const called = function() {
+const called = function () {
   console.log('hello')
 }
 const afterCalled = after(3, called)

@@ -58,20 +58,20 @@ function palindrome4(str) {
   while (back > front) {
     // increments front pointer if current character doesn't meet criteria
     while (str[front].match(/[\W_]/)) {
-      front++
+      front += 1
     }
     // decrements back pointer if current character doesn't meet criteria
     while (str[back].match(/[\W_]/)) {
-      back--
+      back -= 1
     }
     // finally does the comparison on the current character
     if (str[front].toLowerCase() !== str[back].toLowerCase()) {
       return false
     }
 
-    front++
+    front += 1
 
-    back--
+    back -= 1
   }
 
   // if the whole string has been compared without returning false, it's a palindrome!

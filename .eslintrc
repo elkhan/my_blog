@@ -34,7 +34,6 @@
     "spaced-comment": "warn",
     "no-extend-native": "off",
     "sort-imports": "warn",
-    "max-classes-per-file:": "0",
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
@@ -64,7 +63,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"],
+        "paths": ["."],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     },

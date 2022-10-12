@@ -2,7 +2,12 @@
 
 function getEmployeeFactory() {
   let employeeNumber = 1
-  return (name, country) => ({ employeeNumber: employeeNumber++, name, country })
+  // eslint-disable-next-line no-return-assign
+  return (name, country) => ({
+    employeeNumber: (employeeNumber += 1),
+    name,
+    country
+  })
 }
 
 const getEmployee = getEmployeeFactory()

@@ -6,7 +6,7 @@ function bar(x, y) {
   return [y, z]
 
   function foo(x) {
-    y++
+    y += 1
     z = x * y
   }
 }

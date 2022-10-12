@@ -12,7 +12,7 @@ function findDuplicateTransactions(transactions = []) {
 
   const getSimilarByCategory = (list, getKey) => {
     const map = new Map()
-    list.forEach(el => {
+    list.forEach((el) => {
       const key = getKey(el)
       if (!map.has(key)) {
         map.set(key, [el])
@@ -24,21 +24,22 @@ function findDuplicateTransactions(transactions = []) {
   }
 
   const similarByTime = transactions.sort(transactionsSortedByTime)
-  const similarByCategory = getSimilarByCategory(similarByTime, transaction =>
+  const similarByCategory = getSimilarByCategory(similarByTime, (transaction) =>
     JSON.stringify({
       sourceAccount: transaction.sourceAccount,
       targetAccount: transaction.targetAccount,
       amount: transaction.amount,
-      category: transaction.category,
+      category: transaction.category
     })
   )
   const tempOutput = Array.from(similarByCategory.values())
-    .map(element => {
+    .map((element) => {
       if (element.length === 1) {
         return null
       }
       let uniqueTransactions = []
       const duplicateTransactions = []
+      // eslint-disable-next-line array-callback-return
       element.map((transaction, index) => {
         if (index === 0) {
           uniqueTransactions.push(transaction)
@@ -55,7 +56,7 @@ function findDuplicateTransactions(transactions = []) {
       console.log('duplicateTransactions', duplicateTransactions)
       return [...uniqueTransactions, ...duplicateTransactions]
     })
-    .filter(elem => elem !== null && elem.length > 1)
+    .filter((elem) => elem !== null && elem.length > 1)
 
   return tempOutput
 }
@@ -67,7 +68,7 @@ findDuplicateTransactions([
     targetAccount: 'my_account',
     amount: 10000,
     category: 'salary',
-    time: '2018-02-25T08:00:00.000Z',
+    time: '2018-02-25T08:00:00.000Z'
   },
   {
     id: 201,
@@ -75,7 +76,7 @@ findDuplicateTransactions([
     targetAccount: 'my_account',
     amount: 10000,
     category: 'pension_benefits',
-    time: '2018-02-25T08:00:00.000Z',
+    time: '2018-02-25T08:00:00.000Z'
   },
   {
     id: 101,
@@ -83,7 +84,7 @@ findDuplicateTransactions([
     targetAccount: 'my_account',
     amount: 240,
     category: 'salary',
-    time: '2018-02-25T08:00:30.000Z',
+    time: '2018-02-25T08:00:30.000Z'
   },
   {
     id: 2,
@@ -91,7 +92,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -50,
     category: 'eating_out',
-    time: '2018-03-01T12:34:00.000Z',
+    time: '2018-03-01T12:34:00.000Z'
   },
   {
     id: 3,
@@ -99,7 +100,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -1000,
     category: 'groceries',
-    time: '2018-03-01T17:28:32.000Z',
+    time: '2018-03-01T17:28:32.000Z'
   },
   {
     id: 4,
@@ -107,7 +108,7 @@ findDuplicateTransactions([
     targetAccount: 'cinema',
     amount: -330,
     category: 'other',
-    time: '2018-03-01T20:10:15.000Z',
+    time: '2018-03-01T20:10:15.000Z'
   },
   {
     id: 6,
@@ -115,7 +116,7 @@ findDuplicateTransactions([
     targetAccount: 'internet_shop',
     amount: -250,
     category: 'other',
-    time: '2018-03-01T22:16:40.000Z',
+    time: '2018-03-01T22:16:40.000Z'
   },
   {
     id: 102,
@@ -123,7 +124,7 @@ findDuplicateTransactions([
     targetAccount: 'internet_shop',
     amount: -250,
     category: 'other',
-    time: '2018-03-01T22:16:50.000Z',
+    time: '2018-03-01T22:16:50.000Z'
   },
   {
     id: 5,
@@ -131,7 +132,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -50,
     category: 'eating_out',
-    time: '2018-03-02T09:25:20.000Z',
+    time: '2018-03-02T09:25:20.000Z'
   },
   {
     id: 7,
@@ -139,7 +140,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -160,
     category: 'groceries',
-    time: '2018-03-02T13:14:00.000Z',
+    time: '2018-03-02T13:14:00.000Z'
   },
   {
     id: 8,
@@ -147,7 +148,7 @@ findDuplicateTransactions([
     targetAccount: 'restaurant',
     amount: -670,
     category: 'eating_out',
-    time: '2018-03-02T18:54:45.000Z',
+    time: '2018-03-02T18:54:45.000Z'
   },
   {
     id: 9,
@@ -155,7 +156,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -50,
     category: 'eating_out',
-    time: '2018-03-04T07:14:20.000Z',
+    time: '2018-03-04T07:14:20.000Z'
   },
   {
     id: 10,
@@ -163,7 +164,7 @@ findDuplicateTransactions([
     targetAccount: 'fitness_club',
     amount: -560,
     category: 'other',
-    time: '2018-03-04T12:54:10.000Z',
+    time: '2018-03-04T12:54:10.000Z'
   },
   {
     id: 11,
@@ -171,7 +172,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -1540,
     category: 'groceries',
-    time: '2018-03-05T16:24:31.000Z',
+    time: '2018-03-05T16:24:31.000Z'
   },
   {
     id: 12,
@@ -179,7 +180,7 @@ findDuplicateTransactions([
     targetAccount: 'bowling_place',
     amount: -600,
     category: 'other',
-    time: '2018-03-05T21:12:10.000Z',
+    time: '2018-03-05T21:12:10.000Z'
   },
   {
     id: 16,
@@ -187,7 +188,7 @@ findDuplicateTransactions([
     targetAccount: 'my_account',
     amount: 10000,
     category: 'salary',
-    time: '2018-03-25T08:10:00.000Z',
+    time: '2018-03-25T08:10:00.000Z'
   },
   {
     id: 13,
@@ -195,7 +196,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -50,
     category: 'eating_out',
-    time: '2018-04-01T10:24:00.000Z',
+    time: '2018-04-01T10:24:00.000Z'
   },
   {
     id: 14,
@@ -203,7 +204,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -50,
     category: 'eating_out',
-    time: '2018-04-01T10:24:40.000Z',
+    time: '2018-04-01T10:24:40.000Z'
   },
   {
     id: 15,
@@ -211,7 +212,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -50,
     category: 'eating_out',
-    time: '2018-04-01T10:25:10.000Z',
+    time: '2018-04-01T10:25:10.000Z'
   },
   {
     id: 17,
@@ -219,7 +220,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -1870,
     category: 'groceries',
-    time: '2018-04-05T10:24:30.000Z',
+    time: '2018-04-05T10:24:30.000Z'
   },
   {
     id: 18,
@@ -227,7 +228,7 @@ findDuplicateTransactions([
     targetAccount: 'cinema',
     amount: -580,
     category: 'other',
-    time: '2018-04-05T20:01:18.000Z',
+    time: '2018-04-05T20:01:18.000Z'
   },
   {
     id: 19,
@@ -235,7 +236,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -90,
     category: 'eating_out',
-    time: '2018-04-07T09:54:21.000Z',
+    time: '2018-04-07T09:54:21.000Z'
   },
   {
     id: 20,
@@ -243,7 +244,7 @@ findDuplicateTransactions([
     targetAccount: 'internet_shop',
     amount: -1650,
     category: 'other',
-    time: '2018-04-08T21:36:41.000Z',
+    time: '2018-04-08T21:36:41.000Z'
   },
   {
     id: 21,
@@ -251,7 +252,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -1690,
     category: 'groceries',
-    time: '2018-04-10T18:14:10.000Z',
+    time: '2018-04-10T18:14:10.000Z'
   },
   {
     id: 23,
@@ -259,7 +260,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -70,
     category: 'eating_out',
-    time: '2018-04-15T09:12:20.000Z',
+    time: '2018-04-15T09:12:20.000Z'
   },
   {
     id: 22,
@@ -267,7 +268,7 @@ findDuplicateTransactions([
     targetAccount: 'restaurant',
     amount: -970,
     category: 'eating_out',
-    time: '2018-04-17T19:52:46.000Z',
+    time: '2018-04-17T19:52:46.000Z'
   },
   {
     id: 25,
@@ -275,7 +276,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -850,
     category: 'groceries',
-    time: '2018-04-20T18:51:31.000Z',
+    time: '2018-04-20T18:51:31.000Z'
   },
   {
     id: 24,
@@ -283,7 +284,7 @@ findDuplicateTransactions([
     targetAccount: 'fitness_club',
     amount: -610,
     category: 'other',
-    time: '2018-04-22T11:54:10.000Z',
+    time: '2018-04-22T11:54:10.000Z'
   },
   {
     id: 26,
@@ -291,7 +292,7 @@ findDuplicateTransactions([
     targetAccount: 'cinema',
     amount: -450,
     category: 'other',
-    time: '2018-04-23T19:13:10.000Z',
+    time: '2018-04-23T19:13:10.000Z'
   },
   {
     id: 27,
@@ -299,7 +300,7 @@ findDuplicateTransactions([
     targetAccount: 'my_account',
     amount: 10000,
     category: 'salary',
-    time: '2018-04-25T08:00:00.000Z',
+    time: '2018-04-25T08:00:00.000Z'
   },
   {
     id: 28,
@@ -307,7 +308,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -1870,
     category: 'groceries',
-    time: '2018-05-05T10:24:30.000Z',
+    time: '2018-05-05T10:24:30.000Z'
   },
   {
     id: 29,
@@ -315,7 +316,7 @@ findDuplicateTransactions([
     targetAccount: 'cinema',
     amount: -580,
     category: 'other',
-    time: '2018-05-05T20:01:18.000Z',
+    time: '2018-05-05T20:01:18.000Z'
   },
   {
     id: 30,
@@ -323,7 +324,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -90,
     category: 'eating_out',
-    time: '2018-05-07T09:54:21.000Z',
+    time: '2018-05-07T09:54:21.000Z'
   },
   {
     id: 31,
@@ -331,7 +332,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -90,
     category: 'eating_out',
-    time: '2018-05-07T09:55:10.000Z',
+    time: '2018-05-07T09:55:10.000Z'
   },
   {
     id: 32,
@@ -339,7 +340,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -90,
     category: 'eating_out',
-    time: '2018-05-07T09:56:09.000Z',
+    time: '2018-05-07T09:56:09.000Z'
   },
   {
     id: 33,
@@ -347,7 +348,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -90,
     category: 'eating_out',
-    time: '2018-05-07T09:57:05.000Z',
+    time: '2018-05-07T09:57:05.000Z'
   },
   {
     id: 35,
@@ -355,7 +356,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -90,
     category: 'eating_out',
-    time: '2018-05-07T09:58:06.000Z',
+    time: '2018-05-07T09:58:06.000Z'
   },
   {
     id: 36,
@@ -363,7 +364,7 @@ findDuplicateTransactions([
     targetAccount: 'internet_shop',
     amount: -1650,
     category: 'other',
-    time: '2018-05-08T21:36:41.000Z',
+    time: '2018-05-08T21:36:41.000Z'
   },
   {
     id: 37,
@@ -371,7 +372,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -1690,
     category: 'groceries',
-    time: '2018-05-10T18:14:10.000Z',
+    time: '2018-05-10T18:14:10.000Z'
   },
   {
     id: 39,
@@ -379,7 +380,7 @@ findDuplicateTransactions([
     targetAccount: 'coffee_shop',
     amount: -70,
     category: 'eating_out',
-    time: '2018-05-15T09:12:20.000Z',
+    time: '2018-05-15T09:12:20.000Z'
   },
   {
     id: 38,
@@ -387,7 +388,7 @@ findDuplicateTransactions([
     targetAccount: 'restaurant',
     amount: -970,
     category: 'eating_out',
-    time: '2018-05-17T19:52:46.000Z',
+    time: '2018-05-17T19:52:46.000Z'
   },
   {
     id: 41,
@@ -395,7 +396,7 @@ findDuplicateTransactions([
     targetAccount: 'supermarket',
     amount: -850,
     category: 'groceries',
-    time: '2018-05-20T18:51:31.000Z',
+    time: '2018-05-20T18:51:31.000Z'
   },
   {
     id: 40,
@@ -403,7 +404,7 @@ findDuplicateTransactions([
     targetAccount: 'fitness_club',
     amount: -610,
     category: 'other',
-    time: '2018-05-22T11:54:10.000Z',
+    time: '2018-05-22T11:54:10.000Z'
   },
   {
     id: 42,
@@ -411,6 +412,6 @@ findDuplicateTransactions([
     targetAccount: 'cinema',
     amount: -450,
     category: 'other',
-    time: '2018-05-23T19:13:10.000Z',
-  },
+    time: '2018-05-23T19:13:10.000Z'
+  }
 ])

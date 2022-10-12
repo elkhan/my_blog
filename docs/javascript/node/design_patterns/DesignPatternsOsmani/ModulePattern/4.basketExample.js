@@ -1,4 +1,4 @@
-const basketModule = (function() {
+const basketModule = (function () {
   // privates
 
   const basket = []
@@ -33,12 +33,12 @@ const basketModule = (function() {
       let p = 0
 
       // eslint-disable-next-line no-plusplus
-      while (q--) {
+      while ((q -= 1)) {
         p += basket[q].price
       }
 
       return p
-    },
+    }
   }
 })()
 

@@ -4,7 +4,7 @@ function createPerson(name, age, job) {
   o.name = name
   o.age = age
   o.job = job
-  o.sayName = function() {
+  o.sayName = function () {
     console.log(this.name)
   }
   return o
@@ -18,7 +18,7 @@ function Person(name, age, job) {
   this.name = name
   this.age = age
   this.job = job
-  this.sayName = function() {
+  this.sayName = function () {
     console.log(this.name)
   }
 }
@@ -33,7 +33,7 @@ function Person() {}
 Person.prototype.name = 'Nicholas'
 Person.prototype.age = 29
 Person.prototype.job = 'Software Engineer'
-Person.prototype.sayName = function() {
+Person.prototype.sayName = function () {
   console.log(this.name)
 }
 
@@ -123,7 +123,7 @@ Person.prototype = {
   job: 'Software Engineer',
   sayName() {
     console.log(this.name)
-  },
+  }
 }
 // The end result is the same, with one exception: the constructor property no longer points to Person.
 
@@ -135,13 +135,13 @@ Person.prototype = {
   job: 'Software Engineer',
   sayName() {
     console.log(this.name)
-  },
+  }
 }
 
 // Restoring the constructor in this manner creates a property with [[Enumerable]] set to true. Native constructor properties are not enumerable by default, so if you’re using an ECMAScript 5–compliant JavaScript engine, you may wish to use Object.defineProperty() instead:
 Object.defineProperty(Person.prototype, 'constructor', {
   enumerable: false,
-  value: Person,
+  value: Person
 })
 
 // ******************
@@ -151,7 +151,7 @@ Object.defineProperty(Person.prototype, 'constructor', {
 
 var friend = new Person()
 
-Person.prototype.sayHi = function() {
+Person.prototype.sayHi = function () {
   console.log('hi')
 }
 friend.sayHi()
@@ -168,7 +168,7 @@ Person.prototype = {
   job: 'Software Engineer',
   sayName() {
     console.log(this.name)
-  },
+  }
 }
 
 friend.sayName() // TypeError: friend.sayName is not a function
@@ -179,7 +179,7 @@ friend.sayName() // TypeError: friend.sayName is not a function
 // Native Object Prototypes
 // The prototype pattern is important not just for defining custom types but also because it is the pattern used to implement all of the native reference types. Each of these (including Object, Array, String, and so on) has its methods defined on the constructor’s prototype. For instance, the sort() method can be found on Array.prototype, and substring() can be found on String.prototype.
 // Through native object prototypes, it’s possible to get references to all of the default methods and to define new methods.
-String.prototype.startsWith = function(text) {
+String.prototype.startsWith = function (text) {
   return this.indexOf(text) == 0
 }
 
@@ -199,7 +199,7 @@ Person.prototype = {
   constructor: Person,
   sayName() {
     console.log(this.name)
-  },
+  }
 }
 var person1 = new Person('Nicholas', 29, 'Software Engineer')
 var person2 = new Person('Greg', 27, 'Doctor')
@@ -235,3 +235,5 @@ console.log(person1.sayName === person2.sayName) // true
 // *********************
 // Durable Constructor Pattern
 // ...
+
+module.exports = {}

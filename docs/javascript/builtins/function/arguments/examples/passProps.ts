@@ -1,4 +1,5 @@
 import { assert } from 'console'
+
 const parentFunc = (firstName: string, lastName: string) => {
   const fullName = `${firstName} ${lastName}`
   const childFunc = (arg: string) => arg.toUpperCase()

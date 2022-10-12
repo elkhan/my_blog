@@ -52,6 +52,7 @@
 
  */
 
+// @ts-nocheck
 function Queue(capacity) {
   // implement me...
 }
@@ -86,3 +87,5 @@ Queue.prototype.count = function count() {
 
 
  */
+
+export {}
