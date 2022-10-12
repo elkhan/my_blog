@@ -46,6 +46,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: 'Elkhan.me',
         logo: {
@@ -60,52 +71,26 @@ const config = {
             label: 'Docs',
           },
           {
+            to: '/tags',
+            position: 'left',
+            label: 'Tags',
+          },
+          {
             href: 'https://github.com/elkhan/my_blog',
-            label: 'GitHub',
+            className: 'header-github-link',
             position: 'right',
+            'aria-label': 'GitHub repository',
+          },
+          {
+            href: 'https://twitter.com/elkhanme',
+            className: 'header-twitter-link',
+            position: 'right',
+            'aria-label': 'Twitter',
           },
         ],
       },
       footer: {
-        style: 'dark',
-        links: [
-          {
-            items: [
-              {
-                label: 'Algorithms',
-                to: '/docs/algorithms',
-              },
-              {
-                label: 'Data structures',
-                to: '/docs/data_structures',
-              },
-              {
-                label: 'JavaScript',
-                to: '/docs/javascript',
-              },
-            ],
-          },
-          {
-            items: [
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/elkhanme',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/elkhan',
-              },
-            ],
-          },
-          {
-            items: [
-              {
-                label: 'Blog',
-                to: '/',
-              },
-            ],
-          },
-        ],
+        style: 'light',
         copyright: `Copyright © ${new Date().getFullYear()} Elkhan.me, Built with Docusaurus.`,
       },
       prism: {
