@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Some title</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Which color do you prefer?</legend>
+      <ul>
+        <li>
+          <input type="radio" value="red" name="color" id="colorRed" /><label
+            for="colorRed"
+            >Red</label
+          >
+        </li>
+        <li>
+          <input
+            type="radio"
+            value="green"
+            name="color"
+            id="colorGreen"
+          /><label for="colorGreen">Green</label>
+        </li>
+        <li>
+          <input type="radio" value="blue" name="color" id="colorBlue" /><label
+            for="colorBlue"
+            >Blue</label
+          >
+        </li>
+      </ul>
+    </fieldset>
+    <script type="text/javascript">
+      const originalTitle = document.title
+      console.log(originalTitle)
+      document.title = 'The very new page title'
+      document.write(`<strong>${new Date().toString()}</strong>`)
+      // window.onload = function() {
+      //   document.write("Hello World");
+      // };
+
+      // var colors = document.getElementsByTagName('ul')[0];
+      // colors.addEventListener('click', (e) => {
+      //   console.log(e.target.innerText);
+      // })const originalTitle = document.title
+      console.log(originalTitle)
+      document.title = 'The very new page title'
+      document.write(`<strong>${new Date().toString()}</strong>`)
+      // window.onload = function() {
+      //   document.write("Hello World");
+      // };
+
+      // var colors = document.getElementsByTagName('ul')[0];
+      // colors.addEventListener('click', (e) => {
+      //   console.log(e.target.innerText);
+      // })
+    </script>
+    <script type="text/javascript">
+      document.writeln(
+        '<script type="text/javascript" src="file.js">' + '<\/script>'
+      )
+      // window.onload = function() {
+      //   document.write("All gone");
+      // }; // This overwrites everything since called after paged loaded
+    </script>
+  </body>
+</html>
