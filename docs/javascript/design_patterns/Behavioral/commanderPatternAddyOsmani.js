@@ -1,7 +1,4 @@
-// https://addyosmani.com/resources/essentialjsdesignpatterns/book/#commandpatternjavascript
-// https://www.dofactory.com/javascript/command-design-pattern
-// https://www.wikiwand.com/en/Command_pattern#/JavaScript
-;(function() {
+;(function () {
   const carManager = {
     // request information
     requestInfo(model, id) {
@@ -16,9 +13,9 @@
     // arrange a viewing
     arrangeViewing(model, id) {
       return `You have successfully booked a viewing of ${model} ( ${id} ) `
-    },
+    }
   }
-  carManager.execute = function(name) {
+  carManager.execute = function (name) {
     return (
       carManager[name] &&
       carManager[name].apply(carManager, [].slice.call(arguments, 1))

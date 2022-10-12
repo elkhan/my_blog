@@ -1,53 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires,import/no-extraneous-dependencies
-const { expect } = require('chai')
-
-const sayHello = (callback) => {
-  console.log('Hello 1')
-  callback()
-}
-
-sayHello(() => {
-  console.log('Hello 2')
-})
-/**
- * Hello 1
- * Hello 2
- */
-
-const printSomething = () => {
-  console.log('Hello world')
-}
-
-sayHello(printSomething)
-/**
- * Hello 1
- * Hello world
- */
-
-const greeting = (name) => `Hello ${name}, welcome to Riga!`
-
-const introduction = (firstName, lastName, callback) => {
-  const fullName = `${firstName} ${lastName}`
-  return callback(fullName)
-}
-
-expect(introduction('Elkhan', 'Mamedov', greeting)).to.eq('Hello Elkhan Mamedov, welcome to Riga!')
-
-/**
- *
- */
-const callBackPerson = (arg, cb) => cb(arg)
-const consolePersonDetails = (obj) =>
-  `My name is ${obj.name}, I am a ${obj.job} and I like ${obj.hobby}`
-const person = {
-  name: 'Elkhan',
-  job: 'JavaScript Developer',
-  hobby: 'Photography',
-}
-expect(callBackPerson(person, consolePersonDetails)).to.eq(
-  'My name is Elkhan, I am a JavaScript Developer and I like Photography'
-)
-
 console.log('*****Asynchronous callback example*****')
 
 // https://glebbahmutov.com/blog/sync-callbacks/
@@ -116,4 +66,6 @@ function performOperations(a, b, cb) {
 
 performOperations(2, 3, (res) => `The result is ${res}`)
 
-expect(performOperations(2, 3, (res) => `The result is ${res}`)).to.eq('The result is 5')
+expect(performOperations(2, 3, (res) => `The result is ${res}`)).to.eq(
+  'The result is 5'
+)
