@@ -4,10 +4,14 @@ const userFunctions = {
   },
   increment() {
     this.score += 1
-  },
+  }
 }
 
-function userCreator(name, score) {
+function userCreator(name: string, score: number) {
+  // const newUser = {}
+  // newUser.increment = () => {
+  //   newUser.score += 1
+  // }
   const newUser = Object.create(userFunctions)
   newUser.name = name
   newUser.score = score
@@ -18,9 +22,13 @@ function userCreator(name, score) {
 const paidUserFunctions = {
   increaseBalance() {
     this.accountBalance += 1
-  },
+  }
 }
-function paidUserCreator(paidName, paidScore, accountBalance) {
+function paidUserCreator(
+  paidName: string,
+  paidScore: number,
+  accountBalance: number
+) {
   const paidUser = userCreator(paidName, paidScore)
   Object.setPrototypeOf(paidUser, paidUserFunctions) // setting __proto__ reference
   paidUser.accountBalance = accountBalance
@@ -41,3 +49,18 @@ paidUser1.increment()
 paidUser1.sayName() // I am Alyssa
 console.log(paidUser1.score) // 9
 console.log(paidUser1.accountBalance) // 26
+
+type Person = {
+  name?: string
+  age?: number
+}
+
+// Factory function
+export function simplePersonCreate(name: string, age: number) {
+  const person: Person = {}
+  person.name = name
+  person.age = age
+  return person
+}
+
+export {}

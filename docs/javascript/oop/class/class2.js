@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class Foo {
   constructor(who) {
     this.me = who
@@ -8,7 +9,7 @@ class Foo {
   }
 
   static hello() {
-    console.log('Hello')
+    console.log('Hello static')
   }
 }
 

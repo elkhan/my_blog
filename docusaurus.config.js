@@ -24,7 +24,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en']
   },
 
   presets: [
@@ -33,14 +33,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.js')
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.css')
         },
-        blog: { routeBasePath: '/' },
-      }),
-    ],
+        blog: { routeBasePath: '/' }
+      })
+    ]
   ],
 
   themeConfig:
@@ -49,55 +49,55 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: true,
-        },
+          autoCollapseCategories: true
+        }
       },
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
-        respectPrefersColorScheme: true,
+        respectPrefersColorScheme: true
       },
       navbar: {
         title: 'Elkhan.me',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.svg'
         },
         items: [
           {
             type: 'doc',
             docId: 'index',
             position: 'left',
-            label: 'Docs',
+            label: 'Docs'
           },
           {
             to: '/tags',
             position: 'left',
-            label: 'Tags',
+            label: 'Tags'
           },
           {
             href: 'https://github.com/elkhan/my_blog',
             className: 'header-github-link',
             position: 'right',
-            'aria-label': 'GitHub repository',
+            'aria-label': 'GitHub repository'
           },
           {
             href: 'https://twitter.com/elkhanme',
             className: 'header-twitter-link',
             position: 'right',
-            'aria-label': 'Twitter',
-          },
-        ],
+            'aria-label': 'Twitter'
+          }
+        ]
       },
       footer: {
         style: 'light',
-        copyright: `Copyright © ${new Date().getFullYear()} Elkhan.me, Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Elkhan.me, Built with Docusaurus.`
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+        darkTheme: darkCodeTheme
+      }
+    })
 }
 
 module.exports = config

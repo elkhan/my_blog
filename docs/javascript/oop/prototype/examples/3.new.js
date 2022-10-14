@@ -23,3 +23,5 @@ You're logged in!
  */
 
 console.log(UserCreator.name) // UserCreator
+
+module.exports = {}

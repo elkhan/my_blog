@@ -12,6 +12,10 @@ class UserCreator {
   increment() {
     this.score += 1
   }
+
+  showScore() {
+    console.log(this.score)
+  }
 }
 
 const user1 = new UserCreator('Phil', 4)
@@ -35,4 +39,6 @@ class PaidUserCreator extends UserCreator {
 const paidUser1 = new PaidUserCreator('Alyssa', 8, 25)
 paidUser1.increaseBalance()
 console.log(paidUser1.accountBalance) // 26
+paidUser1.increment()
+paidUser1.showScore() // 8
 paidUser1.sayName() // I am Alyssa

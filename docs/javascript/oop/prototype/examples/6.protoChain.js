@@ -1,6 +1,6 @@
-/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-prototype-builtins,no-proto */
 const obj = {
-  num: 4,
+  num: 4
 }
 // Object
 console.log(obj.hasOwnProperty('hasOwnProperty')) // false
@@ -11,3 +11,5 @@ console.log(Function.prototype.__proto__) // {} - Object.prototype
 console.log(Function.prototype.__proto__.__proto__) // null
 /* All functions have a prototype object */
 /* All objects have a __proto__ / [[Prototype]] pointer to functions' prototype object */
+
+module.exports = {}

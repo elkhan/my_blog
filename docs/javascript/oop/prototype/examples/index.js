@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 // http://csbin.io/oop
 console.log('Hello, world!')
 
@@ -41,7 +42,7 @@ const vicky = makePerson('Vicky', 24)
 const personStore = {
   greet() {
     console.log('hello')
-  },
+  }
 }
 
 // /********* Uncomment this line to test your work! *********/
@@ -76,7 +77,7 @@ const sandra = personFromPersonStore('Sandra', 26)
  */
 
 // add code here
-personStore.introduce = function() {
+personStore.introduce = function () {
   console.log(`Hi, my name is ${this.name}`)
 }
 
@@ -94,10 +95,10 @@ personStore.introduce = function() {
  */
 
 function PersonConstructor() {
-  this.greet = function() {
+  this.greet = function () {
     console.log('hello')
   }
-  this.introduce = function() {
+  this.introduce = function () {
     console.log(`Hi, my name is ${this.name}`)
   }
 }
@@ -195,7 +196,7 @@ const thai = new DeveloperClass('Thai', 32)
 const userFunctionStore = {
   sayType() {
     console.log(`I am a ${this.type}`)
-  },
+  }
 }
 
 function userFactory(name, score) {
@@ -224,8 +225,8 @@ const adminFunctionStore = Object.create(userFunctionStore, {
   sharePublicMessage: {
     value() {
       console.log('Welcome users!')
-    },
-  },
+    }
+  }
 })
 
 /** Challenge 2 */
@@ -239,11 +240,11 @@ function adminFactory(name, score) {
   const adminDefault = userFactory.call(this, name, score)
   const admin = Object.create(adminFunctionStore, {
     name: {
-      value: name,
+      value: name
     },
     score: {
-      value: score,
-    },
+      value: score
+    }
   })
 
   /** Challenge 3 */
@@ -273,3 +274,5 @@ console.log(user)
 admin.sayType() // -> Logs "I am a Admin"
 user.sayType() // -> Logs "I am a User"
 admin.sharePublicMessage() // -> Logs "Welcome users!"
+
+module.exports = {}

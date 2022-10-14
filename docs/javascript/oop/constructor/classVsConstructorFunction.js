@@ -39,3 +39,5 @@ console.log(user2) // UserMaker { name: 'Joe', score: 6 }
 user2.increment()
 console.log(user2) // UserMaker { name: 'Joe', score: 7 }
 user2.login() // Joe: login from class
+
+module.exports = {}

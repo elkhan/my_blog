@@ -39,4 +39,7 @@ paidUser1.increment()
 console.log(paidUser1.name) // Alyssa - comes from UserCreator function
 console.log(paidUser1.accountBalance) // 26
 console.log(paidUser1.score) // 9
+// eslint-disable-next-line no-proto
 console.log(PaidUserCreator.prototype.__proto__)
+
+module.exports = {}

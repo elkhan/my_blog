@@ -5,7 +5,7 @@ const userFunctionStore = {
   },
   login() {
     console.log('You are logged in')
-  },
+  }
 }
 
 function userCreator2(name, score) {
@@ -22,7 +22,7 @@ console.log(user21.name)
 user21.increment()
 console.log(user21.score)
 user21.login()
-/* 
+/*
 Mike
 11
 You are logged in
@@ -37,5 +37,7 @@ Greg
 You are logged in
  */
 
+// eslint-disable-next-line no-proto
 console.log(user21.__proto__) // { increment: [Function: increment], login: [Function: login] }
+// eslint-disable-next-line no-proto
 console.log(user21.__proto__.__proto__) // {}
