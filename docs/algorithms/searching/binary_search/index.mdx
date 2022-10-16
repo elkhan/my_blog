@@ -6,22 +6,72 @@ For a list of 8 elements, _log(8) = 3_, because _2<sup>3</sup> = 8_
 
 - _log<sub>2</sub>(8) = 3_
 
-So for a list of 8 numbers you would have to check 3 numbers at most.
+So for a list of 8 elements you would have to check 3 elements at most.
 
 For a list of 1024 elements _log(1024) = 10_, because _2<sup>10</sup> = 1024_
 
 - _log<sub>2</sub>(1024) = 10_
 
-So for a list of 1024 numbers, you'd have to check 10 numbers at most.
+So for a list of 1024 elements, you'd have to check 10 elements at most.
 
-^ In the context of Big O notation, log always mean log<sub>2</sub>
+^ In the context of Big O notation, log always means log<sub>2</sub>
 
 More on [logarithms](/docs/algorithms/logarithms/)
 
-## Links
+---
 
-[Flavio Copes blog](https://flaviocopes.com/binary-search-javascript/)
+```js
+const binarySearch = (nums, target) => {
+  let start = 0
+  let end = nums.length - 1
+  while (start <= end) {
+    const mid = Math.floor((start + end) / 2)
+    if (nums[mid] === target) return mid
+    if (target > nums[mid]) {
+      start = mid + 1
+    } else {
+      end = mid - 1
+    }
+  }
+  return null
+}
+```
 
-[Medium article](https://medium.com/@jeffrey.allen.lewis/javascript-algorithms-explained-binary-search-25064b896470)
+:::info
+```js
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+binarySearch(arr, 7) // outputs 6
+```
+:::
 
-[https://realpython.com/binary-search-python](https://realpython.com/binary-search-python/)
+
+export const BinarySearch = () => {
+  const binarySearch = (nums, target) => {
+    let start = 0
+    let end = nums.length - 1
+    while (start <= end) {
+      const mid = Math.floor((start + end) / 2)
+      if (nums[mid] === target) return mid
+      if (target > nums[mid]) {
+        start = mid + 1
+      } else {
+        end = mid - 1
+      }
+    }
+    return null
+  }
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  return <button onClick={() => alert(binarySearch(arr, 7))}>Click</button>
+}
+
+<BinarySearch/>
+
+---
+
+## References
+
+[Flavio Copes blog - JavaScript implementation](https://flaviocopes.com/binary-search-javascript/)
+
+[Medium article - JavaScript implementation](https://medium.com/@jeffrey.allen.lewis/javascript-algorithms-explained-binary-search-25064b896470)
+
+[realpython.com - Binary Search](https://realpython.com/binary-search-python/)

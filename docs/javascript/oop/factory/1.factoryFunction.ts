@@ -1,6 +1,6 @@
-const userFunctions = {
+const userFunctionStore = {
   sayName() {
-    console.log(`I am ${this.name}`)
+    return `I am ${this.name}`
   },
   increment() {
     this.score += 1
@@ -12,7 +12,7 @@ function userCreator(name: string, score: number) {
   // newUser.increment = () => {
   //   newUser.score += 1
   // }
-  const newUser = Object.create(userFunctions)
+  const newUser = Object.create(userFunctionStore)
   newUser.name = name
   newUser.score = score
   return newUser
@@ -35,7 +35,7 @@ function paidUserCreator(
   return paidUser
 }
 
-Object.setPrototypeOf(paidUserFunctions, userFunctions)
+Object.setPrototypeOf(paidUserFunctions, userFunctionStore)
 
 const user1 = userCreator('Mike', 10)
 user1.sayName() // I am Mike

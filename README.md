@@ -12,7 +12,7 @@ TODO: Add the steps
 - Algorithm is a method for solving problems
 - Data structure is a method to store information
 
-## Links
+## References
 
 - <https://www.manning.com/books/grokking-algorithms>
 - <https://www.crackingthecodinginterview.com/>
