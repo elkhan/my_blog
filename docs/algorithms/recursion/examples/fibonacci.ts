@@ -2,7 +2,7 @@
 
 Write a function that outputs the nth Fibonnaci number. A number in this sequence is found by adding up the two numbers before it.
 
-Fibonnaci's sequence:
+Fibonnaci sequence:
 input    0 1 2 3 4 5 6  7  8  9 ...
 output   0 1 1 2 3 5 8 13 21 34 ...
 
@@ -13,7 +13,7 @@ What is the time complexity? Can you think of optimizing your solution? (Hint: l
 // https://www.youtube.com/watch?v=rf60MejMz3E
 // https://www.mathsisfun.com/numbers/fibonacci-sequence.html
 
-function fibonacciFor(targetIndex) {
+function fibonacciFor(targetIndex: number) {
   const sequence = [0, 1]
 
   // eslint-disable-next-line no-plusplus
@@ -28,7 +28,7 @@ function fibonacciFor(targetIndex) {
 
 console.log('fibonacciFor', fibonacciFor(10))
 
-function fibonacciWhile(num1) {
+function fibonacciWhile(num1: number) {
   let a = 1
   let b = 0
   let temp
@@ -37,6 +37,7 @@ function fibonacciWhile(num1) {
     temp = a
     a += b
     b = temp
+    // eslint-disable-next-line no-param-reassign
     num1 -= 1
   }
 
@@ -45,7 +46,7 @@ function fibonacciWhile(num1) {
 
 console.log('fibonacciWhile', fibonacciWhile(10))
 
-function fibonacciRec(num2) {
+function fibonacciRec(num2: number): number {
   if (num2 === 0) {
     return 0
   }
@@ -58,7 +59,8 @@ function fibonacciRec(num2) {
 
 console.log('fibonacciRec', fibonacciRec(10))
 
-function fibonacciMemo(num3, memo) {
+function fibonacciMemo(num3: number, memo?: Record<number, number>): number {
+  // eslint-disable-next-line no-param-reassign
   memo = memo || {}
 
   if (memo[num3]) {
@@ -71,8 +73,11 @@ function fibonacciMemo(num3, memo) {
     return 1
   }
 
+  // eslint-disable-next-line no-return-assign,no-param-reassign
   return (memo[num3] =
     fibonacciMemo(num3 - 1, memo) + fibonacciMemo(num3 - 2, memo))
 }
 
 console.log('fibonacciMemo', fibonacciMemo(10))
+
+export {}

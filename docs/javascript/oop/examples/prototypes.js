@@ -9,11 +9,11 @@ function Human(firstName, lastName) {
   this.friends = ['jake', 'lucy']
 }
 
-Human.prototype.getFullName = function() {
+Human.prototype.getFullName = function () {
   return `${this.firstName} ${this.lastName}`
 }
 
-Human.prototype.getAge = function() {
+Human.prototype.getAge = function () {
   return 44
 }
 
@@ -40,3 +40,5 @@ console.log(person.friends) // [ 'jake', 'lucy' ]
 person2.friends.push('karl')
 console.log(person.friends) // [ 'jake', 'lucy' ]
 console.log(person2.friends) // [ 'jake', 'lucy', 'karl' ] => instance properties are not shared
+
+module.exports = {}

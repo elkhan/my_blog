@@ -16,7 +16,7 @@
 
  ES6 includes a Map data structure. It differs from the JavaScript object because the keys can be any value (not just strings like for objects), there is a size property, and there is a guaranteed order (the insertion order).
 
- Hash tables are also referred to as hash mapse or dictionaries.
+ Hash tables are also referred to as hash maps or dictionaries.
 
 
  *** Operations:
@@ -85,7 +85,7 @@ HashTable.prototype.find = function find(key) {
   return {
     match,
     bucket,
-    matchIndex,
+    matchIndex
   }
 }
 

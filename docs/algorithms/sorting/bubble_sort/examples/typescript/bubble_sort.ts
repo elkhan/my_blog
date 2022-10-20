@@ -19,3 +19,22 @@ Variants:
 (https://en.wikipedia.org/wiki/Cocktail_sort)
 
 */
+
+const nums = [3, 1, 6, 10, 4, 7]
+
+export const bubbleSort = (arr: number[]) => {
+  // eslint-disable-next-line no-param-reassign
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = 0; j < arr.length - 1 - i; j += 1) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j]
+        // eslint-disable-next-line no-param-reassign
+        arr[j] = arr[j + 1]
+        // eslint-disable-next-line no-param-reassign
+        arr[j + 1] = temp
+      }
+    }
+  }
+}
+bubbleSort(nums)
+console.log(nums)

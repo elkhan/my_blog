@@ -34,7 +34,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
+    "noUncheckedIndexedAccess": false,
     "noPropertyAccessFromIndexSignature": false,
     "moduleResolution": "NodeNext",
     "baseUrl": ".",

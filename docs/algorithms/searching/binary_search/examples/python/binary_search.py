@@ -1,6 +1,3 @@
-# num = int(input('List length to search through? '))
-# tg = int(input('What number to search for? '))
-
 """
 def create_list(n):
     arr = []
@@ -28,4 +25,56 @@ def binary_search(input_list, target):
     return None
 
 
-# print('The index is {}'.format(binary_search(create_list(num), tg)))
+"""
+Recursive Binary search
+"""
+
+
+def binary_search_recursive(input_list, target):
+    middle = len(input_list) // 2
+
+    if target == input_list[middle]:
+        return middle
+
+    if middle == 0:
+        return None
+
+    if target > input_list[middle]:
+        index = binary_search_recursive(input_list[middle + 1:], target)
+        return index + middle + 1 if index is not None else None
+
+    return binary_search_recursive(input_list[:middle], target)
+
+
+def binary_search_recursive_args(input_list, target, start=0, end=None):
+    if end is None:
+        end = len(input_list) - 1
+
+    if start > end:
+        return None
+
+    middle = (start + end) // 2
+
+    if target == input_list[middle]:
+        return middle
+
+    if target > input_list[middle]:
+        return binary_search_recursive_args(input_list, target, middle + 1, end)
+
+    return binary_search_recursive_args(input_list, target, start, middle - 1)
+
+
+# https://stackoverflow.com/a/57515486
+def recursive_binary_search(arr, target):
+    middle = len(arr) // 2
+    if len(arr) == 1:
+        return middle if arr[middle] == target else None
+    elif arr[middle] == target:
+        return middle
+    else:
+        if target > arr[middle]:
+            index = recursive_binary_search((arr[middle:]), target)
+            return middle + index if index is not None else None
+        else:
+            return recursive_binary_search((arr[:middle]), target)
+
