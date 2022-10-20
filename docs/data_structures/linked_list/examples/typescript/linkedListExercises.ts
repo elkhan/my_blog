@@ -39,7 +39,8 @@
 
 
  * Optimization:
- Say we have a linked list that has 100 items and we want to add an item to the very end. How would you do that with your current implementation? How can you modify the data structure to add an item to the end in constant time?
+ Say we have a linked list that has 100 items and we want to add an item to the very end. 
+ How would you do that with your current implementation? How can you modify the data structure to add an item to the end in constant time?
 
  myList.appendToTail(value)
  => new tail node
