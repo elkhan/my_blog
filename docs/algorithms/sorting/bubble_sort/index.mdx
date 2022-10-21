@@ -1,0 +1,48 @@
+---
+title: Bubble sort
+description: Bubble sort
+keywords:
+  - bubble_sort
+  - algorithms
+sidebar_position: 1
+---
+
+```js
+export const bubbleSort = (arr) => {
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = 0; j < arr.length - 1 - i; j += 1) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+      }
+    }
+  }
+}
+```
+
+:::info
+```js
+const nums = [8, 3, 1, 6, 10, 4, 5, 7, 2, 9]
+bubbleSort(nums) // outputs [1,2,3,4,5,6,7,8,9,10]
+```
+:::
+
+export const BubbleSort = () => {
+  const bubbleSort = (arr) => {
+    for (let i = 0; i < arr.length; i += 1) {
+      for (let j = 0; j < arr.length - 1 - i; j += 1) {
+        if (arr[j] > arr[j + 1]) {
+          const temp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = temp
+        }
+      }
+    }
+  }
+  const nums = [8, 3, 1, 6, 10, 4, 5, 7, 2, 9]
+  bubbleSort(nums)
+  return <button onClick={() => alert(nums)}>Sort it</button>
+}
+
+<BubbleSort/>
