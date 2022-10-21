@@ -25,13 +25,12 @@ export const createArray = (num: number): number[] => {
  Binary Search recursive
  */
 
-// @ts-ignore
 export const binarySearchRecursive = (
   nums: number[],
   target: number,
   start = 0,
-  end = nums.length - 1
-) => {
+  end: number = nums.length - 1
+): number | null => {
   if (start > end) return null
 
   const middle = Math.floor((start + end) / 2)
