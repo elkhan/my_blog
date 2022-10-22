@@ -27,16 +27,37 @@ export function sumAll(n: number): number {
    */
 }
 
-console.log(sumAll(5))
+export function sumIter(nums: number[]) {
+  let result = 0
+  for (let i = 0; i < nums.length; i += 1) {
+    // eslint-disable-next-line prefer-rest-params
+    result += nums[i]
+  }
+  return result
+}
+
+export function sumRecur(nums: number[]): number {
+  if (nums.length === 1) {
+    return nums[0]
+  }
+  if (nums.length <= 2) {
+    return nums[0] + nums[1]
+  }
+  // @ts-ignore
+  return nums[0] + sumRecur(nums.slice(1))
+}
+
+export function sum(arg: number[], acc: number): number {
+  if (arg.length === 0) {
+    return acc
+  }
+  return sum(arg.slice(1), acc + arg[0])
+}
 
 export function stringReverse(str: string): string {
   if (!str.length) return ''
-  console.log(`${str.substring(1)} : ${str.charAt(0)}`)
   return stringReverse(str.substring(1)) + str.charAt(0)
 }
-
-stringReverse('hello')
-
 /*
 stringReverseExample('hello') {
   stringReverseExample('ello') + h {
