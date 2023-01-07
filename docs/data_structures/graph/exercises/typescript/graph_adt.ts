@@ -1,3 +1,4 @@
+export {}
 /*
 
  https://github.com/kuychaco/algoClass/blob/master/data-structures/graph.js
@@ -89,63 +90,63 @@
 
  */
 
-//
-// @ts-nocheck
-// FIXME
-function Graph() {
-  // eslint-disable-next-line no-underscore-dangle
-  this._nodes = {}
-}
+/*
 
-Graph.prototype.addNode = function addNode(value) {
-  // implement me...
-}
-// Time complexity:
+ function Graph() {
+ // eslint-disable-next-line no-underscore-dangle
+ this._nodes = {}
+ }
 
-Graph.prototype.removeNode = function removeNode(value) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.addNode = function addNode(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.contains = function contains(value) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.removeNode = function removeNode(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.addEdge = function addEdge(value1, value2) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.contains = function contains(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.removeEdge = function removeEdge(value1, value2) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.addEdge = function addEdge(value1, value2) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.hasEdge = function hasEdge(value1, value2) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.removeEdge = function removeEdge(value1, value2) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.forEach = function forEach(fn) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.hasEdge = function hasEdge(value1, value2) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.traverseDepthFirst = function traverseDepthFirst(
-  value,
-  fn,
-  visited,
-  distance
-) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.forEach = function forEach(fn) {
+ // implement me...
+ }
+ // Time complexity:
 
-Graph.prototype.traverseBreadthFirst = function traverseBreadthFirst(
-  value,
-  fn
-) {
-  // implement me...
-}
-// Time complexity:
+ Graph.prototype.traverseDepthFirst = function traverseDepthFirst(
+ value,
+ fn,
+ visited,
+ distance
+ ) {
+ // implement me...
+ }
+ // Time complexity:
+
+ Graph.prototype.traverseBreadthFirst = function traverseBreadthFirst(
+ value,
+ fn
+ ) {
+ // implement me...
+ }
+ // Time complexity:
+ */

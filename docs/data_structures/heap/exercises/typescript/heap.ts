@@ -1,3 +1,4 @@
+export {}
 /*
 
  https://github.com/kuychaco/algoClass/blob/master/data-structures/heap.js

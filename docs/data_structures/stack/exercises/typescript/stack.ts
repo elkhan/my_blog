@@ -1,3 +1,4 @@
+export {}
 /*
 
  https://github.com/kuychaco/algoClass/blob/master/data-structures/stack.js
@@ -52,31 +53,29 @@
 
  */
 
-//
-// @ts-nocheck
-// FIXME
-function Stack(capacity) {
-  // implement me...
-}
+/*
+ function Stack(capacity) {
+ // implement me...
+ }
 
-Stack.prototype.push = function push(value) {
-  // implement me...
-}
-// Time complexity:
+ Stack.prototype.push = function push(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-Stack.prototype.pop = function pop() {
-  // implement me...
-}
-// Time complexity:
+ Stack.prototype.pop = function pop() {
+ // implement me...
+ }
+ // Time complexity:
 
-Stack.prototype.peek = function peek() {
-  // implement me...
-}
-// Time complexity:
+ Stack.prototype.peek = function peek() {
+ // implement me...
+ }
+ // Time complexity:
 
-Stack.prototype.count = function count() {
-  // implement me...
-}
+ Stack.prototype.count = function count() {
+ // implement me...
+ } */
 // Time complexity:
 
 /*

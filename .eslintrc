@@ -15,7 +15,9 @@
     "plugin:@docusaurus/all"
   ],
   "parser": "@typescript-eslint/parser",
-  "globals": { "JSX": true },
+  "globals": {
+    "JSX": true
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -23,9 +25,23 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "@docusaurus"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "@docusaurus"
+  ],
   "rules": {
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
     "camelcase": "off",
+    "max-classes-per-file": "off",
+    "no-use-before-define": "warn",
+    "no-useless-return": "off",
+    "lines-between-class-members": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-var-requires": "off",
@@ -46,7 +62,11 @@
         "tsx": "never"
       }
     ],
-    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "WithStatement"
+    ],
     "no-alert": "off",
     "import/no-unresolved": [
       "off",
@@ -64,8 +84,15 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["."],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "paths": [
+          "."
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       }
     },
     "react": {

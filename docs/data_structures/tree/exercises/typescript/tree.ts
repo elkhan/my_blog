@@ -1,3 +1,5 @@
+export {}
+
 /*
 
  https://github.com/kuychaco/algoClass/blob/master/data-structures/tree.js
@@ -42,29 +44,29 @@
 
  */
 
-//
-// @ts-nocheck
-// FIXME
-function Tree(value) {
-  // implement me...
-}
+/*
 
-Tree.prototype.addChild = function addChild(value) {
-  // implement me...
-}
-// Time complexity:
+ function Tree(value) {
+ // implement me...
+ }
 
-Tree.prototype.contains = function contains(value) {
-  // implement me...
-}
-// Time complexity:
+ Tree.prototype.addChild = function addChild(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-Tree.prototype.traverseDepthFirst = function traverseDepthFirst(fn) {
-  // implement me...
-}
-// Time complexity:
+ Tree.prototype.contains = function contains(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-Tree.prototype.traverseBreadthFirst = function traverseBreadthFirst(fn) {
-  // implement me...
-}
-// Time complexity:
+ Tree.prototype.traverseDepthFirst = function traverseDepthFirst(fn) {
+ // implement me...
+ }
+ // Time complexity:
+
+ Tree.prototype.traverseBreadthFirst = function traverseBreadthFirst(fn) {
+ // implement me...
+ }
+ // Time complexity:
+ */

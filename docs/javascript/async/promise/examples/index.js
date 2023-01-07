@@ -26,7 +26,7 @@ let promise = new Promise((resolve, reject) => {
 // Should print out "Resolved!"
 // ADD CODE HERE
 
-promise.then(data => console.log(data))
+promise.then((data) => console.log(data))
 
 // Challenge 3
 /**
@@ -35,12 +35,12 @@ promise.then(data => console.log(data))
  */
 promise = new Promise((resolve, reject) => {
   // ADD CODE HERE
-  reject('3. Rejected!')
+  reject(new Error('3. Rejected!'))
 })
 
 // Should print out "Reject!"
 // ADD CODE HERE
-promise.catch(data => console.log(data))
+promise.catch((data) => console.log(data))
 
 // Challenge 4
 /**
@@ -56,12 +56,13 @@ promise = new Promise((resolve, reject) => {
 })
 
 // Uncomment the lines below when ready
-promise.then(data => console.log(data))
+promise.then((data) => console.log(data))
 console.log("4. I'm not the promise!")
 
 // Challenge 5
 /**
- * Write a function delay that returns a promise. And that promise should return a setTimeout that calls resolve after 1000ms
+ * Write a function delay that returns a promise. And that promise should return a setTimeout that calls resolve after
+ * 1000ms
  */
 function delay() {
   return new Promise((resolve, reject) => {
@@ -71,18 +72,19 @@ function delay() {
 
 // Uncomment the code below to test
 // This code should log "Hello" after 1000ms
-function sayHello(data) {
-  console.log(data)
-}
+/* function sayHello(data) {
+ console.log(data)
+ }
 
-delay().then(sayHello)
+ delay().then(sayHello)
+ */
 
 // Challenge 6
 /**
  * This challenge we'll chain promises together using ".then" Create two variables: firstPromise and secondPromise
- * Set secondPromise to be a promise that resolves to "Second!" Set firstPromise to be a promise that resolves to secondPromise
- * Call the firstPromise with a ".then", which will return the secondPromise> promise.
- * Then print the contents of the promise after it has been resolved by passing console.log to .then
+ * Set secondPromise to be a promise that resolves to "Second!" Set firstPromise to be a promise that resolves to
+ * secondPromise Call the firstPromise with a ".then", which will return the secondPromise> promise. Then print the
+ * contents of the promise after it has been resolved by passing console.log to .then
  */
 //
 // ADD CODE BELOW
@@ -94,7 +96,7 @@ const firstPromise = new Promise((resolve, reject) => {
   resolve(secondPromise)
 })
 
-firstPromise.then(data => console.log(data))
+firstPromise.then((data) => console.log(data))
 
 // Challenge 7
 /**
@@ -104,23 +106,23 @@ firstPromise.then(data => console.log(data))
 const fakePeople = [
   { name: 'Rudolph', hasPets: false, currentTemp: 98.6 },
   { name: 'Zebulon', hasPets: true, currentTemp: 22.6 },
-  { name: 'Harold', hasPets: true, currentTemp: 98.3 },
+  { name: 'Harold', hasPets: true, currentTemp: 98.3 }
 ]
 
-const fakeAPICall = i => {
+const fakeAPICall = (i) => {
   const returnTime = Math.floor(Math.random() * 1000)
   return new Promise((resolve, reject) => {
     if (i >= 0 && i < fakePeople.length) {
       setTimeout(() => resolve(fakePeople[i]), returnTime)
     } else {
-      reject({ message: 'index out of range' })
+      reject(new Error('index out of range'))
     }
   })
 }
 
 function getAllData() {
   // CODE GOES HERE
-  Promise.all([fakeAPICall(0), fakeAPICall(1), fakeAPICall(2)]).then(data =>
+  Promise.all([fakeAPICall(0), fakeAPICall(1), fakeAPICall(2)]).then((data) =>
     console.log(data)
   )
 }

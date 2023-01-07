@@ -1,9 +1,6 @@
 // eslint-disable-next-line max-len
 // https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
 
-// eslint-disable-next-line import/no-unresolved
-import './object.extension'
-
 export const sockMerchant = (n: number, nums: number[]) => {
   const map = new Map()
   let pairs = 0

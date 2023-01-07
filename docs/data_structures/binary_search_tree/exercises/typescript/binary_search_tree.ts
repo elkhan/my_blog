@@ -1,3 +1,5 @@
+export {}
+
 /*
 
  https://github.com/kuychaco/algoClass/blob/master/data-structures/binarySearchTree.js
@@ -54,49 +56,49 @@
 
  */
 
-//
-// @ts-nocheck
-// FIXME
-function BinarySearchTree(value) {
-  this.value = value
-  this.left = null
-  this.right = null
-}
+/*
 
-BinarySearchTree.prototype.insert = function insert(value) {
-  // implement me...
-}
-// Time complexity:
+ function BinarySearchTree(value) {
+ this.value = value
+ this.left = null
+ this.right = null
+ }
 
-BinarySearchTree.prototype.contains = function contains(value) {
-  // implement me...
-}
-// Time complexity:
+ BinarySearchTree.prototype.insert = function insert(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_inOrder =
-  function traverseDepthFirst_inOrder(fn) {
-    // implement me...
-  }
-// Time complexity:
+ BinarySearchTree.prototype.contains = function contains(value) {
+ // implement me...
+ }
+ // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_preOrder =
-  function traverseDepthFirst_preOrder(fn) {
-    // implement me...
-  }
-// Time complexity:
+ BinarySearchTree.prototype.traverseDepthFirst_inOrder =
+ function traverseDepthFirst_inOrder(fn) {
+ // implement me...
+ }
+ // Time complexity:
 
-BinarySearchTree.prototype.traverseDepthFirst_postOrder =
-  function traverseDepthFirst_postOrder(fn) {
-    // implement me...
-  }
-// Time complexity:
+ BinarySearchTree.prototype.traverseDepthFirst_preOrder =
+ function traverseDepthFirst_preOrder(fn) {
+ // implement me...
+ }
+ // Time complexity:
 
-BinarySearchTree.prototype.checkIfFull = function checkIfFull() {
-  // implement me...
-}
-// Time complexity:
+ BinarySearchTree.prototype.traverseDepthFirst_postOrder =
+ function traverseDepthFirst_postOrder(fn) {
+ // implement me...
+ }
+ // Time complexity:
 
-BinarySearchTree.prototype.checkIfBalanced = function checkIfBalanced() {
-  // implement me...
-}
-// Time complexity:
+ BinarySearchTree.prototype.checkIfFull = function checkIfFull() {
+ // implement me...
+ }
+ // Time complexity:
+
+ BinarySearchTree.prototype.checkIfBalanced = function checkIfBalanced() {
+ // implement me...
+ }
+ // Time complexity:
+ */

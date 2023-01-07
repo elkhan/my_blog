@@ -1,6 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface Array<T> {
-  count: (value: number) => T
+export {}
+
+declare global {
+  interface Array<T> {
+    count: (value: number) => T
+  }
 }
 
 Array.prototype.count = function count(value: number) {

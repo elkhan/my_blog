@@ -9,7 +9,7 @@
     "lint": "eslint '**/*.{js,ts,tsx}' --fix --quiet",
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
     "check:types": "tsc --noEmit",
-    "pre-commit": "yarn check:types && yarn lint-staged",
+    "pre-commit": "yarn check:types && yarn lint-staged --quiet",
     "prepare": "husky install",
     "docusaurus": "docusaurus",
     "docusaurus:start": "docusaurus start",

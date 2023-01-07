@@ -1,3 +1,4 @@
+export {}
 /*
 
  https://github.com/kuychaco/algoClass/blob/master/data-structures/hashTable.js
@@ -59,64 +60,61 @@
 
  */
 
-//
-// @ts-nocheck
-// FIXME
+/*
+ // Simple hashing function to use in your implementation
+ function simpleHash(str, tableSize) {
+ let hash = 0
+ for (let i = 0; i < str.length; i += 1) {
+ hash += str.charCodeAt(i) * (i + 1)
+ }
+ return hash % tableSize
+ }
+ // source: http://pmav.eu/stuff/javascript-hashing-functions/source.html
 
-// Simple hashing function to use in your implementation
-function simpleHash(str, tableSize) {
-  let hash = 0
-  for (let i = 0; i < str.length; i += 1) {
-    hash += str.charCodeAt(i) * (i + 1)
-  }
-  return hash % tableSize
-}
-// source: http://pmav.eu/stuff/javascript-hashing-functions/source.html
+ function HashTable(/!* ??? *!/) {
+ // implement me...
+ }
 
-function HashTable(/* ??? */) {
-  // implement me...
-}
+ // This is a helper method that you may want to implement to help keep your code DRY
+ // You can implement the hash table methods without it.
+ // I recommend skipping it and coming back if you find that it will be useful
+ HashTable.prototype.find = function find(key) {
+ // implement me...
+ return {
+ match,
+ bucket,
+ matchIndex
+ }
+ }
 
-// This is a helper method that you may want to implement to help keep your code DRY
-// You can implement the hash table methods without it.
-// I recommend skipping it and coming back if you find that it will be useful
-HashTable.prototype.find = function find(key) {
-  // implement me...
-  return {
-    match,
-    bucket,
-    matchIndex
-  }
-}
+ HashTable.prototype.set = function set(key, value) {
+ // implement me...
+ }
+ // Time complexity:
 
-HashTable.prototype.set = function set(key, value) {
-  // implement me...
-}
-// Time complexity:
+ HashTable.prototype.get = function get(key) {
+ // implement me...
+ }
+ // Time complexity:
 
-HashTable.prototype.get = function get(key) {
-  // implement me...
-}
-// Time complexity:
+ HashTable.prototype.has = function has(key) {
+ // implement me...
+ }
+ // Time complexity:
 
-HashTable.prototype.has = function has(key) {
-  // implement me...
-}
-// Time complexity:
+ HashTable.prototype.delete = function del(key) {
+ // implement me...
+ }
+ // Time complexity:
 
-HashTable.prototype.delete = function del(key) {
-  // implement me...
-}
-// Time complexity:
+ HashTable.prototype.count = function count() {
+ // implement me...
+ }
+ // Time complexity:
 
-HashTable.prototype.count = function count() {
-  // implement me...
-}
-// Time complexity:
-
-HashTable.prototype.forEach = function forEach(callback) {
-  // implement me...
-}
+ HashTable.prototype.forEach = function forEach(callback) {
+ // implement me...
+ } */
 // Time complexity:
 
 /*
