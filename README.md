@@ -7,7 +7,7 @@ TODO: Add the steps
 - [Husky](https://github.com/typicode/husky)
 - [Conventional commits](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional)
 
-## Technical interview preparation
+## Interview preparation
 
 - Algorithm is a method for solving problems
 - Data structure is a method to store information
@@ -32,7 +32,7 @@ TODO: Add the steps
 - <https://www.hackerrank.com/>
 - <https://practice.geeksforgeeks.org/explore/?problemType=full&page=1&sortBy=submissions>
 
-## Github repos
+## GitHub repos
 
 - <https://github.com/loiane/javascript-datastructures-algorithms>
 - <https://github.com/adnanaziz/EPIJudge>
