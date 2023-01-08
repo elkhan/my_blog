@@ -4,7 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
-/** @type {import('@docusaurus/types').Config} */
+/** @type {import("@docusaurus/types").Config} */
 const config = {
   title: 'Personal Blog',
   tagline: 'JavaScript and all that comes with it',
@@ -30,7 +30,7 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      /** @type {import("@docusaurus/preset-classic").Options} */
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js')
@@ -44,7 +44,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
       docs: {
         sidebar: {
@@ -59,16 +59,12 @@ const config = {
       },
       navbar: {
         title: 'Elkhan.me',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg'
-        },
         items: [
           {
             type: 'doc',
             docId: 'index',
             position: 'left',
-            label: 'Docs'
+            label: 'Reference'
           },
           {
             to: '/tags',
