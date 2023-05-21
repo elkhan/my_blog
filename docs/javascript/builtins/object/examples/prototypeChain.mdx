@@ -1,0 +1,26 @@
+---
+title: Prototype chain
+description: Prototype chain in JavaScript
+keywords:
+  - javascript
+  - object
+  - property
+tags: [object, prototype]
+sidebar_position: 4
+---
+
+### Prototype chain
+
+[Prototypes are the mechanism by which JavaScript objects inherit features from one another.](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+
+One of the JavaScript objects' internal (hidden) properties is [[Prototype]] which is a reference to a prototype object of its constructor function.
+
+```javascript
+const person = {
+  name: 'Jane'
+}
+
+console.log(Object.getPrototypeOf(person) === Object.prototype) // true
+console.log(person.__proto__ === Object.prototype) // true
+```
+---

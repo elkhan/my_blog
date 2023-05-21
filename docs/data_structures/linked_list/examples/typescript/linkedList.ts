@@ -1,4 +1,4 @@
-export class Node<T> {
+class Node<T> {
   value: T
   next: Node<T> | null
 
@@ -66,10 +66,15 @@ export class LinkedList<T> {
 
     this.length += 1
 
-    const current = this.getAt(index) as Node<T>
-    const node = new Node(value)
+    const previous = this.getAt(index - 1) as Node<T>
+    if (!previous || !previous.next) {
+      this.append(value)
+      return
+    }
 
-    node.next = current
+    const newNode = new Node(value)
+    newNode.next = previous.next
+    previous.next = newNode
   }
 
   remove(value: T): T | null {
@@ -129,11 +134,59 @@ export class LinkedList<T> {
   }
 }
 
-const ls = new LinkedList()
-ls.prepend({ title: 'Post A' })
+const lll = {
+  head: {
+    value: {
+      title: 'Post 0'
+    },
+    next: {
+      value: {
+        title: 'Post between 0 and A'
+      },
+      next: {
+        value: {
+          title: 'Post A'
+        },
+        next: null
+      }
+    }
+  },
+  tail: {
+    value: {
+      title: 'Post A'
+    },
+    next: null
+  },
+  length: 3
+}
+/* 
+const pp = {
+  head: {
+    value: {
+      title: 'Post -1'
+    },
+    next: {
+      value: {
+        title: 'Post 0'
+      },
+      next: {
+        value: {
+          title: 'Post 1'
+        },
+        next: null
+      }
+    }
+  },
+  tail: { value: { title: 'Post 1' }, next: null },
+  size: 3
+}
+ */
 
-console.log(ls.getLength())
-ls.append({ title: 'Post B' })
-ls.prepend({ title: 'Post 0' })
-ls.insertAt({ title: 'Post A-B' }, 2)
-console.log(JSON.stringify(ls, null, 2))
+const A = new LinkedList()
+A.append({ title: 'Post A' })
+A.prepend({ title: 'Post 0' })
+A.insertAt({ title: 'Post between 0 and A' }, 1)
+
+const arrA = [A]
+
+console.log(arrA[arrA.length - 1].head?.next)

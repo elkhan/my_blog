@@ -1,0 +1,379 @@
+---
+title: Object properties
+description: Object properties
+keywords:
+  - javascript
+  - object
+  - property
+tags: [object, property, properties]
+sidebar_position: 4
+---
+
+## Data properties
+
+Each object property apart from being a key value pair has its **_attributes_** enclosed in another object called a **_property descriptor_**:
+
+### Property attributes:
+
+Quoting the [ECMA spec](http://ecma-international.org/ecma-262/5.1/#sec-8.6):
+
+An Object is a collection of properties. Each property is either a named data property, a named accessor property, or an internal property:
+
+* A named data property associates a name with an ECMAScript language value and a set of Boolean attributes.
+
+* A named accessor property associates a name with one or two accessor functions, and a set of Boolean attributes. The accessor functions are used to store or retrieve an ECMAScript language value that is associated with the property.
+
+* An internal property has no name and is not directly accessible via ECMAScript language operators. Internal properties exist purely for specification purposes.
+
+There are two kinds of access for named (non-internal) properties: **get** and **put**, corresponding to retrieval and assignment, respectively.
+
+### Attributes of a Named Data Property
+_A property that has a value._
+
+| Attribute name   | Value               | Description                                                                                                                                                   | Default value |
+|------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| [[Value]]        | Any JavaScript type | The value retrieved by a get access of the property.                                                                                                          | undefined     |
+| [[Writable]]     | Boolean             | If true, the property will be enumerated in _for…in_ loops. See [Enumerability](#enumerability)                                                               | false         |
+| [[Configurable]] | Boolean             | If _false_, the property cannot be deleted, cannot be changed to an accessor property and attributes other than [[Value]] and [[Writable]] cannot be changed. | false         |
+
+### Attributes of a Named Accessor Property:
+_A property described by a getter-setter pair of functions._
+
+| Attribute name   | Value                 | Description                                                                                                                                                              | Default value |
+|------------------|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| [[Get]]          | Function or undefined | The function is called with an empty argument list return the property value whenever a get access to the value is performed.                                            | undefined     |
+| [[Set]]          | Function or undefined | The function is called with an argument that contains the assigned value as its only argument and is executed each time a specified property is attempted to be changed. | undefined     |
+| [[Enumerable]]   | Boolean               | If _true_, the property will be enumerated in _for…in_ loops.                                                                                                            | false         |
+| [[Configurable]] | Boolean               | If _false_, the property can’t be deleted, can’t be changed to a data property, or its attributes can’t be changed.                                                      | false         |
+
+>Default values shown in the tables above are in the case of defining properties via Object.defineProperty().
+
+### A property descriptor:
+Getting a single property descriptor (default values set via assignment are not the same as in the tables above):
+
+```js
+const person = {
+  name: 'Jake',
+  age: 32
+}
+
+const personDesc = Object.getOwnPropertyDescriptor(person, 'name')
+console.log(personDesc) // { value: 'Jake', writable: true, enumerable: true, configurable: true }
+```
+
+Getting all own property descriptors (default values set via assignment):
+
+```js
+const person = {
+  name: 'Jake',
+  age: 32
+}
+const personDescriptors = Object.getOwnPropertyDescriptors(person)
+console.log(personDescriptors)
+/*
+{
+  name: {
+    value: 'Jake',
+    writable: true,
+    enumerable: true,
+    configurable: true
+  },
+  age: { value: 32, writable: true, enumerable: true, configurable: true }
+}
+ */
+```
+
+### Property assignment.
+
+Objects properties and methods can be added during objects creation or at any time later.
+
+>A property name that is not a valid JavaScript identifier (a property name that has space or hyphen, or starts with a number, or a result of an expression) can only be accessed using the square bracket notation.
+
+>To assign to a property either dot or bracket syntax is used.
+
+>Property assignment is different from property definition because it triggers a setter function, its own or one up in the prototype chain.
+
+>If there is a setter function (own or inherited) then it is invoked and a property is either changed or created.
+
+>[The assignment operator does not change properties in prototypes. #4.3](https://2ality.com/2012/08/property-definition-assignment.html)
+
+Properties can be deleted using delete operator. More on this in [Configurability](#configurability).
+```js
+const person = {
+  name: 'Jake'
+}
+person['age'] = 32
+console.log(person.age) // 32
+delete person.age // highlight-line
+
+console.log(person.age) // undefined
+```
+
+---
+_Square bracket notation examples:_
+```js
+const car = {
+  'four wheels': true
+}
+const carMake = 'make'
+car[carMake] = 'Ford'
+car['Pink Cadillac'] = 'Mmmm, nice!'
+
+console.log(car['four wheels']) // true
+console.log(car) // { 'four wheels': true, make: 'Ford', 'Pink Cadillac': 'Mmmm, nice!' }
+```
+
+---
+_Object destructuring:_
+```js
+const personOne = {
+  firstName: 'Jake'
+}
+const { firstName } = personOne
+console.log(firstName) // Jake
+// The same as
+const personTwo = {
+  lastName: 'Doe'
+}
+const lastName = personTwo.lastName
+console.log(lastName) // Doe
+```
+---
+_As of ES2015 there is a feature called computed property names that lets us use square brackets in object literal:_
+```javascript
+const readlineSync = require('readline-sync')
+
+const userName = readlineSync.question('What is your name? ')
+
+const reception = {
+  [`Welcome ${userName}`]: 'checked!'
+}
+console.log(reception) // { 'Welcome Elkhan': 'checked!' }
+```
+---
+_ES2018 proposal added_ [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) _properties to object literals:_
+```javascript
+const person1 = {
+  name: 'Jake',
+  age: 32
+}
+const person2 = {
+  name: 'Jane',
+  age: 30
+}
+
+const person3 = { ...person1 }
+console.log(person3) // { name: 'Jake', age: 32 }
+
+const person4 = { ...person1, ...person2 }
+console.log(person4) // { name: 'Jane', age: 30 }
+const person5 = Object.assign({}, person1, person2)
+console.log(person5) // { name: 'Jane', age: 30 }
+```
+---
+>[For the differences between spreading an object versus using Object.assign().](https://2ality.com/2016/10/rest-spread-properties.html#spreading-objects-versus-object.assign())
+
+>Object.assign() is similar to a property assignment – it triggers setters. Spread syntax defines properties.
+
+### Property definition.
+There is a function to define a property – _Object.defineProperty(obj, propName, propDesc)._ This function adds own property to an object and attributes are specified via the third argument.
+>Multiple properties can be defined by [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) like [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) does it via its second argument.
+
+```javascript
+const person = {}
+
+Object.defineProperty(person, 'name', {
+  value: 'Adam',
+  writable: true,
+  configurable: true,
+  enumerable: true
+})
+
+console.log(person.name) // Adam
+```
+---
+
+**Examples:**
+
+Configurable – won’t delete or change some attributes (enumerable and configurable itself as example):
+```javascript
+const person = {}
+Object.defineProperty(person, 'name', {
+  value: 'Jane',
+  writable: true,
+  configurable: false,
+  enumerable: true
+})
+Object.defineProperty(person, 'age', {
+  value: 32,
+  writable: true,
+  configurable: true,
+  enumerable: true
+})
+console.log(person.name) // Jane
+console.log(person.age) // 32
+delete person.name
+delete person.age
+console.log(person.name) // Jane
+console.log(person.age) // undefined
+```
+---
+
+Writable – won’t change:
+```javascript
+const person = {}
+Object.defineProperty(person, 'name', {
+  value: 'Jane',
+  writable: false,
+  configurable: true,
+  enumerable: true
+})
+Object.defineProperty(person, 'age', {
+  value: 32,
+  writable: true,
+  configurable: true,
+  enumerable: true
+})
+console.log(person.name) // Jane
+console.log(person.age) // 32
+person.name = 'Jake'
+person.age = 42
+console.log(person.name) // Jane
+console.log(person.age) // 42
+```
+---
+Enumerable – won’t show up while enumerating, serialising or seeing it in Object.keys().
+```javascript
+Object.defineProperty(person, 'name', {
+  value: 'Jane',
+  writable: true,
+  configurable: true,
+  enumerable: false
+})
+Object.defineProperty(person, 'age', {
+  value: 32,
+  writable: true,
+  configurable: true,
+  enumerable: true
+})
+
+for (const personKey in person) {
+  if (Object.prototype.hasOwnProperty.call(person, personKey)) {
+    console.log(person[personKey]) // 32
+  }
+}
+
+const personSerialize = JSON.stringify(person)
+console.log(personSerialize) // {"age":32}
+
+const personKeys = Object.keys(person)
+console.log(personKeys) // [ 'age' ]
+```
+---
+>[More examples](https://javascript.info/property-descriptors) including links to sealing, freezing and preventing extension of an object.
+---
+_An example when not all attributes are provided thus resolving to the defaults (see the tables above):_
+```javascript
+const person = {}
+Object.defineProperties(person, {
+  name: {
+    value: 'Jane'
+  },
+  age: {
+    value: 32,
+    writable: true
+  }
+})
+const personDesc = Object.getOwnPropertyDescriptors(person)
+console.log(personDesc)
+/*
+{
+  name: {
+    value: 'Jane',
+    writable: false,
+    enumerable: false,
+    configurable: false
+  },
+  age: { value: 32, writable: true, enumerable: false, configurable: false }
+}
+ */
+```
+---
+### Accessor properties.
+These are the functions that allow to specify the return value of a property or set a value of a property.
+
+**Getter.**
+```javascript
+const person = {
+  firstName: 'Jake',
+  lastName: 'Doe',
+  age: 32,
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+console.log(person.fullName) // Jake Doe
+```
+---
+**Setter**
+```javascript
+const person = {
+  firstName: 'Jake',
+  lastName: 'Doe',
+  age: 32,
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+console.log(person.fullName) // Jake Doe
+
+Object.defineProperty(person, 'fullName', {
+  set(value) {
+    // https://prettier.io/docs/en/rationale.html#semicolons
+    ;[this.firstName, this.lastName] = value.split(' ')
+  }
+})
+person.fullName = 'Jane Robinson'
+console.log(person.fullName) // Jane Robinson
+```
+---
+Setters-getters use cases:
+1. [Smarter getters-setters](https://javascript.info/property-accessors#smarter-getters-setters) – example below.
+2. [Using for compatibility.](https://javascript.info/property-accessors#using-for-compatibility)
+```javascript
+const person = {
+  get name() {
+    return this._name
+  },
+  set name(value) {
+    if (value.length < 4) {
+      console.log('Name is too short')
+      return
+    }
+    this._name = value
+  }
+}
+
+person.name = 'Moe' // Name is too short
+console.log(person.name) // undefined
+person.name = 'Homer'
+console.log(person.name) // Homer
+```
+---
+>A property can either be a data property or an accessor property. That is to have a _value_ or a pair of _getters-setters_
+
+>If a property has only a getter function, it is a read only property. If setter – write only.
+
+**References:**
+1. [https://2ality.com/2012/08/property-definition-assignment.html](https://2ality.com/2012/08/property-definition-assignment.html)
+2. [https://2ality.com/2019/11/object-property-attributes.html](https://2ality.com/2019/11/object-property-attributes.html)
+3. [JavaScript The Definitive Guide](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/) - Property Getters and Setters
+4. [https://javascript.info/property-descriptors](https://javascript.info/property-descriptors)
+5. [Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) - MDN
+6. [ECMA](http://ecma-international.org/ecma-262/5.1/#sec-8.6.1)
+7. [Getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) - MDN
+8. [Setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) - MDN
+9. [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) - MDN
+10. [Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer) - MDN

@@ -1,0 +1,235 @@
+---
+title: Objects and primitives
+description: Object types in JavaScript
+keywords:
+  - javascript
+  - object
+  - property
+tags: [object, property, primitives]
+sidebar_position: 4
+---
+
+JavaScript has seven primitive (non-composite) data types:
+1. undefined
+2. Boolean
+3. Number
+4. String
+5. BigInt
+6. Symbol
+7. null
+
+[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) is a special JavaScript structural type. An associative array where keys are either strings or Symbols and values can be anything – primitive data types, functions (callable objects), arrays or other objects.
+
+All of the other JavaScript data structures are instances of Object. To list a few:
+1.Object
+2.Array
+3.Map
+4.Set
+5.WeakMap
+6.WeakSet
+7.Date
+8.Function.
+
+List of built-in objects on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects).
+
+There are three main differences between objects and [primitive data types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) in JavaScript:
+1.[Primitives are immutable, objects are mutable.](https://stackoverflow.com/a/23556036)
+2.[Primitives don’t have properties or methods, objects do.](https://elkhan.me/2020/07/05/objects-and-primitives/#wrapper-objects-primitives)
+3.[Primitives are stored and copied by value](https://elkhan.me/2020/07/05/objects-and-primitives/#pass-by-value), objects – by reference.
+
+
+Additional reading about Reference:
+1.[Wikipedia on Reference](https://en.wikipedia.org/wiki/Reference_(computer_science)).
+2.[ECMA spec](http://ecma-international.org/ecma-262/5.1/#sec-8.7).
+
+
+Primitive values are stored on the stack, objects – on the heap and this has memory usage implications that will be covered later.
+
+Primitive data types (String, Number and Boolean) don’t have properties or methods but:
+
+```javascript
+const s = 'hello'
+console.log(s.length) // 5
+```
+>This is autoboxing in action. [Link 1](https://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/) [Link2](https://stackoverflow.com/a/17217024) [Link3](https://javascriptrefined.io/the-wrapper-object-400311b29151)
+```javascript
+const x = {
+  num: 2,
+  valueOf() {
+    return this.num * 2
+  }
+}
+const y = {
+  num: 3,
+  valueOf() {
+    return this.num * 2
+  }
+}
+console.log(x + y)
+```
+---
+>[Explanation of what valueOf() does on MDN.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
+
+>Example of pass by value vs pass by reference:
+```javascript
+let a = 'hello'
+const b = a
+a = 'hello world'
+console.log(a) // hello world
+console.log(b) // hello
+console.log(a === b) // false
+
+const objA = {
+  hello: 'world'
+}
+const objB = objA
+objA.hello = 'hello world'
+console.log(objA) // { hello: 'hello world!' }
+console.log(objB) // { hello: 'hello world!' }
+console.log(objA === objB) // true
+```
+---
+### Creating an object.
+---
+**_Object literal syntax:_**
+```javascript
+const person = {
+  name: ['Bob', 'Smith'],
+  age: 32,
+  gender: 'male',
+  interests: ['music', 'skiing'],
+  bio() {
+    return `${this.name[0]} ${this.name[1]} is ${this.age} years old. He likes ${this.interests[0]} and ${this.interests[1]}.`
+  },
+  greeting() {
+    return `Hi! I'm ${this.name[0]}.`
+  }
+}
+// Bob Smith is 32 years old. He likes music and skiing.
+// Hi! I'm Bob.
+```
+---
+**_Using Object.create() to create a blank object:_**
+```javascript
+const car = Object.create({})
+car.color = 'British racing green'
+console.log(car) // { color: 'British racing green' }
+```
+>When creating a simple object Object.create({}) has no advantages over object literal notation. Other use cases of Object.create() is discussed later in [Prototype chain.](https://elkhan.me/2020/07/06/prototype-chain/%E2%80%8E(opens%20in%20a%20new%20tab))
+---
+**_Using_** [new](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) **_keyword with Object constructor:_**
+```javascript
+const newPerson = new Object()
+newPerson.name = 'Jane'
+newPerson.age = 32
+newPerson.gender = 'female'
+newPerson.interests = ['music', 'dancing']
+newPerson.bio = function bio() {
+  return `${this.name} is ${this.age} years old. She likes ${this.interests[0]} and ${this.interests[1]}.`
+}
+// Jane is 32 years old. She likes music and dancing.
+```
+---
+**_Using new keyword with a constructor function:_**
+```javascript
+function PersonCtor(name, age, gender, interests) {
+  this.name = name
+  this.age = age
+  this.gender = gender
+  this.interests = interests
+}
+
+const anotherPerson = new PersonCtor('Bob', 32, 'male', ['music', 'skiing'])
+
+anotherPerson.bio = function bio() {
+  return `${this.name} is ${this.age} years old. He likes ${this.interests[0]} and ${this.interests[1]}.`
+}
+
+anotherPerson.greeting = function greeting() {
+  return `Hi! I'm ${this.name}. And I am ${this.gender}.`
+}
+// Bob is 32 years old. He likes music and skiing.
+// Hi! I'm Bob. And I am male.
+```
+>[Object.create() vs a constructor function.](https://stackoverflow.com/questions/2709612/using-object-create-instead-of-new)
+
+>Object properties can include references to other objects:
+```javascript
+function Car(make, model, year, owner) {
+  this.make = make
+  this.model = model
+  this.year = year
+  this.owner = owner
+}
+
+const aCar = new Car('Eagle', 'Talon TSi', 1993, anotherPerson) // from above
+console.log(aCar.owner.name)
+// Bob
+```
+---
+**_Functional instantiation (constructor function):_**
+```javascript
+function createNewPerson(name, age) {
+  const obj = {}
+  obj.name = name
+  obj.age = age
+  obj.greeting = function greeting() {
+    return `Hi! I'm ${obj.name}. And I am ${obj.age} years old.`
+  }
+  return obj
+}
+const person = createNewPerson('Jane', 32)
+console.log(person.greeting()) // Hi! I'm Jane. And I am 32 years old.
+```
+---
+**_Using_** [Object.assign():](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+```javascript
+const objA = {
+  name: 'John',
+  age: 32
+}
+const objB = {
+  surname: 'Doe',
+  age: 40
+}
+const objC = Object.assign({}, objA, objB)
+console.log(objC) // { name: 'John', age: 40, surname: 'Doe' }
+```
+---
+**_Using object_** [spread syntax:](#spread-syntax)
+```javascript
+const objA = {
+  name: 'Jane',
+  age: 32
+}
+const objB = {
+  surname: 'Doe',
+  age: 30
+}
+const objC = { ...objA, ...objB }
+console.log(objC) // { name: 'Jane', age: 30, surname: 'Doe' }
+```
+---
+**_Using JavaScript_** [classes:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+}
+const employee = new Person('John', 32)
+console.log(employee) // { name: 'John', age: 32 }
+```
+---
+>There are differences in creating objects using options above that will be further explored in [Prototype chain.](/prototype-chain/)
+
+**References:**
+1.[https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics)
+2.[https://javascript.info/object-basics](https://javascript.info/object-basics)
+
+**<a name="spread-syntax"></a>Spread syntax:**
+1.[https://2ality.com/2016/10/rest-spread-properties.html#spread-defines-properties-objectassign-sets-them](https://2ality.com/2016/10/rest-spread-properties.html#spread-defines-properties-objectassign-sets-them)
+2.[https://thecodebarbarian.com/object-assign-vs-object-spread.html](https://thecodebarbarian.com/object-assign-vs-object-spread.html)
+3.[https://dmitripavlutin.com/object-rest-spread-properties-javascript/](https://dmitripavlutin.com/object-rest-spread-properties-javascript/)
+4.[https://blog.bitsrc.io/6-tricks-with-resting-and-spreading-javascript-objects-68d585bdc83](https://blog.bitsrc.io/6-tricks-with-resting-and-spreading-javascript-objects-68d585bdc83)
