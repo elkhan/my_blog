@@ -25,11 +25,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "@docusaurus"
-  ],
+  "plugins": ["react", "@typescript-eslint", "@docusaurus"],
   "rules": {
     "no-param-reassign": [
       "error",
@@ -37,6 +33,7 @@
         "props": false
       }
     ],
+    "arrow-body-style": ["error", "as-needed"],
     "camelcase": "off",
     "max-classes-per-file": "off",
     "no-use-before-define": "warn",
@@ -62,11 +59,7 @@
         "tsx": "never"
       }
     ],
-    "no-restricted-syntax": [
-      "error",
-      "LabeledStatement",
-      "WithStatement"
-    ],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
     "no-alert": "off",
     "import/no-unresolved": [
       "off",
@@ -84,15 +77,8 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": [
-          "."
-        ],
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "paths": ["."],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     },
     "react": {
