@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 const dogs = {
   Fido: 'Mutt',
   Hunter: 'Doberman',
-  Snoopie: 'Beagle',
+  Snoopie: 'Beagle'
 }
 
 const myDog = 'Hunter'
@@ -12,7 +13,7 @@ const anotherBreed = dogs.Snoopie
 console.assert(anotherBreed === 'Beagle')
 
 const someObj = {
-  propName: 'John',
+  propName: 'John'
 }
 
 const propPrefix = (str) => {
@@ -23,5 +24,6 @@ const propPrefix = (str) => {
 const someProp = propPrefix('Name')
 console.assert(someProp === 'propName')
 console.assert(someObj[someProp] === 'John')
-console.assert(someObj["propName"] === 'John')
+// eslint-disable-next-line dot-notation
+console.assert(someObj['propName'] === 'John')
 console.assert(someObj.propName === 'John')
