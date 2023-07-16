@@ -11,8 +11,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "prettier",
-    "plugin:@docusaurus/all"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "globals": {
@@ -25,7 +24,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "@docusaurus"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "no-param-reassign": [
       "error",
@@ -59,20 +58,7 @@
         "tsx": "never"
       }
     ],
-    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
-    "no-alert": "off",
-    "import/no-unresolved": [
-      "off",
-      {
-        "ignore": [
-          "^@theme",
-          "^@docusaurus",
-          "^@generated",
-          "^@site",
-          "^@testing-utils"
-        ]
-      }
-    ]
+    "no-alert": "off"
   },
   "settings": {
     "import/resolver": {

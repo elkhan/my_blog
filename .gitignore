@@ -6,19 +6,12 @@
 node_modules
 *.log
 
-# build
-build
-
 # python
 __pycache__
 .ipynb_checkpoints
 .pytest_cache
 
-# generated
-.docusaurus
-.cache-loader
-
-*.iml
-
 # Next.js
 .next
+
+tsconfig.tsbuildinfo
