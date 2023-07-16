@@ -4,9 +4,7 @@
 
 # npm
 node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log
 
 # build
 build
@@ -21,3 +19,6 @@ __pycache__
 .cache-loader
 
 *.iml
+
+# Next.js
+.next

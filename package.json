@@ -4,8 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "test": "jest",
-    "lint": "eslint '**/*.{js,ts,tsx}' --fix --quiet",
+    "lint:fix": "eslint '**/*.{js,ts,tsx}' --fix --quiet",
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
     "check:types": "tsc --noEmit",
     "pre-commit": "yarn check:types && yarn lint-staged --quiet",
@@ -14,9 +18,10 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@types/jest": "^29.2.5",
+    "@types/jest": "^29.5.3",
     "@types/lodash": "^4.14.186",
-    "@types/node": "^18.6.3",
+    "@types/node": "^20.4.2",
+    "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "8.31.0",
@@ -35,6 +40,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "next": "^13.4.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
