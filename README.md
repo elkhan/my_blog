@@ -1,6 +1,6 @@
 # Project set up
 
-TODO: Add the steps
+TODO: Add the steps.
 
 ## Tools
 
