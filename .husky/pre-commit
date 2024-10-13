@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm pre-commit
-pipenv run pre-commit run
+poetry run pre-commit run

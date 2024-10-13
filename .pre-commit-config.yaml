@@ -15,9 +15,9 @@ repos:
         always_run: false
         pass_filenames: true
         exclude: '^.*(?<!\.py)$'
-      - id: unittest
-        name: Unit Tests
-        entry: python -m unittest discover
-        language: system
-        always_run: false
-        pass_filenames: false
+#      - id: unittest
+#        name: Unit Tests
+#        entry: python -m unittest discover
+#        language: system
+#        always_run: false
+#        pass_filenames: false

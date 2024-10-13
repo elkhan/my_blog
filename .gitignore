@@ -11,7 +11,11 @@ __pycache__
 .ipynb_checkpoints
 .pytest_cache
 
-# Next.js
-.next
+# Generated files
+.docusaurus
+.cache-loader
 
 tsconfig.tsbuildinfo
+
+# Production
+/build

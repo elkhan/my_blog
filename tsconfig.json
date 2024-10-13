@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNEXT",
-    "module": "commonjs",
+    "module": "NodeNext",
     "lib": [
       "ESNext"
     ],
@@ -55,8 +55,6 @@
     "**/*.test.*"
   ],
   "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
   ]

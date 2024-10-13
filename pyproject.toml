@@ -1,2 +1,24 @@
-[tool.black]
-line-length = 100
+[tool.poetry]
+name = "my-blog"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = ""
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.1.2"
+jupyter = "^1.1.1"
+pandas = "^2.2.3"
+scikit-learn = "^1.5.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.3.1"
+black = "^24.10.0"
+pre-commit = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
